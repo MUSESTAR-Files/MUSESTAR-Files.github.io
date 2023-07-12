@@ -1,5 +1,5 @@
 document.write("                            <li class=\"ranklist_item\">");
-document.write("                                <a href=\"https:\/\/www.musestar.cc\/animation\/IchigoProduction\">");
+document.write("                                <a href=\"https:\/\/old.musestar.cc\/animation\/IchigoProduction\">");
 document.write("                                    <div class=\"ranklist_img\">");
 document.write("                                        <div class=\"ranklist_thumb  lazyload\"");
 document.write("                                             style=\"background-image: url(https:\/\/s1.imagehub.cc\/images\/2023\/04\/14\/a095977c44c9dc5232e57672d3eed48e.webp);\">");
@@ -20,7 +20,7 @@ document.write("                                <\/a>");
 document.write("                            <\/li>");
 
 document.write("                            <li class=\"ranklist_item\">");
-document.write("                                <a href=\"https:\/\/www.musestar.cc\/film\/NatsuenoTunnel\">");
+document.write("                                <a href=\"https:\/\/old.musestar.cc\/film\/NatsuenoTunnel\">");
 document.write("                                    <div class=\"ranklist_img\">");
 document.write("                                        <div class=\"ranklist_thumb  lazyload\"");
 document.write("                                             style=\"background-image: url(https:\/\/s1.imagehub.cc\/images\/2022\/12\/04\/3315a902ab17bfb4922cf350437e9877.webp);\">");
@@ -41,7 +41,7 @@ document.write("                                <\/a>");
 document.write("                            <\/li>");
 
 document.write("                            <li class=\"ranklist_item\">");
-document.write("                                <a href=\"https:\/\/www.musestar.cc\/film\/Tetris\">");
+document.write("                                <a href=\"https:\/\/old.musestar.cc\/film\/Tetris\">");
 document.write("                                    <div class=\"ranklist_img\">");
 document.write("                                        <div class=\"ranklist_thumb  lazyload\"");
 document.write("                                             style=\"background-image: url(https:\/\/s1.imagehub.cc\/images\/2023\/04\/15\/6b8deba55eca287f19146c2db71f43d5.webp);\">");
@@ -62,7 +62,7 @@ document.write("                                <\/a>");
 document.write("                            <\/li>");
 
 document.write("                            <li class=\"ranklist_item\">");
-document.write("                                <a href=\"https:\/\/www.musestar.cc\/film\/PostTruth\">");
+document.write("                                <a href=\"https:\/\/old.musestar.cc\/film\/PostTruth\">");
 document.write("                                    <div class=\"ranklist_img\">");
 document.write("                                        <div class=\"ranklist_thumb  lazyload\"");
 document.write("                                             style=\"background-image: url(https:\/\/s1.imagehub.cc\/images\/2023\/05\/14\/PostTruth.webp);\">");
