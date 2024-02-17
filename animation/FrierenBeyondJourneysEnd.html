@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<!--
+▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇
+▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇
+▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇
+▇▇▇▇────▇▇▇▇▇▇▇▇▇▇▇▇─────▇▇▇▇▇▇▇▇▇▇────────▇▇▇▇───────▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇───────▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇───────────────▇▇▇▇▇▇▇▇▇
+▇▇▇▇─────▇▇▇▇▇▇▇▇▇▇─────▇▇▇▇▇▇▇▇▇▇▇▇──────▇▇▇▇▇──────▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇────────────▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇───────────────▇▇▇▇▇▇▇▇
+▇▇▇▇▇▇───▇▇▇▇▇▇▇▇▇▇────▇▇▇▇▇▇▇▇▇▇▇▇▇▇───▇▇▇▇▇▇▇▇▇───▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇─────▇▇▇─────▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇───▇▇▇▇▇▇▇───▇▇▇▇▇▇▇▇
+▇▇▇▇▇▇────▇▇▇▇▇▇▇▇────▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇──▇▇▇▇▇▇▇▇▇───▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇────▇▇▇▇▇▇────▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇──▇▇▇▇▇▇▇▇▇──▇▇▇▇▇▇▇▇
+▇▇▇▇▇▇────▇▇▇▇▇▇▇▇────▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇──▇▇▇▇▇▇▇▇▇───▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇───▇▇▇▇▇▇▇▇───▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇──▇▇▇▇▇▇▇▇▇──▇▇▇▇▇▇▇▇
+▇▇▇▇▇▇─────▇▇▇▇▇▇─────▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇──▇▇▇▇▇▇▇▇▇───▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇───▇▇▇▇▇▇▇▇▇──▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇──▇▇▇▇▇▇▇─▇▇─▇▇▇▇▇▇▇▇
+▇▇▇▇▇▇─────▇▇▇▇▇▇──▇──▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇──▇▇▇▇▇▇▇▇▇───▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇───▇▇▇▇▇▇▇▇──▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇──▇▇▇▇▇▇──▇▇▇▇▇▇▇▇▇▇▇
+▇▇▇▇▇▇──────▇▇▇▇───▇──▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇──▇▇▇▇▇▇▇▇▇───▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇─────▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇──▇▇▇▇▇▇──▇▇▇▇▇▇▇▇▇▇▇
+▇▇▇▇▇▇──▇───▇▇▇▇──▇▇──▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇──▇▇▇▇▇▇▇▇▇───▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇────────▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇──────────▇▇▇▇▇▇▇▇▇▇▇
+▇▇▇▇▇▇──▇────▇▇▇──▇▇──▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇──▇▇▇▇▇▇▇▇▇───▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇────────▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇──────────▇▇▇▇▇▇▇▇▇▇▇
+▇▇▇▇▇▇──▇▇───▇▇───▇▇──▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇──▇▇▇▇▇▇▇▇▇───▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇─────▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇──▇▇▇▇▇▇──▇▇▇▇▇▇▇▇▇▇▇
+▇▇▇▇▇▇──▇▇───▇▇──▇▇▇──▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇──▇▇▇▇▇▇▇▇▇───▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇────▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇──▇▇▇▇▇▇▇─▇▇▇▇▇▇▇▇▇▇▇
+▇▇▇▇▇▇──▇▇▇──────▇▇▇──▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇──▇▇▇▇▇▇▇▇▇──▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇──▇▇▇▇▇▇▇▇▇───▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇──▇▇▇▇▇▇▇─▇▇▇▇▇▇▇▇▇▇▇
+▇▇▇▇▇▇──▇▇▇─────▇▇▇▇──▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇───▇▇▇▇▇▇▇▇──▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇──▇▇▇▇▇▇▇▇▇───▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇──▇▇▇▇▇▇▇▇▇▇─▇▇▇▇▇▇▇▇
+▇▇▇▇▇▇──▇▇▇▇────▇▇▇▇──▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇───▇▇▇▇▇▇▇▇──▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇───▇▇▇▇▇▇▇▇───▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇──▇▇▇▇▇▇▇▇▇──▇▇▇▇▇▇▇▇
+▇▇▇▇▇▇──▇▇▇▇───▇▇▇▇▇──▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇────▇▇▇▇▇▇───▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇────▇▇▇▇▇▇────▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇───▇▇▇▇▇▇▇───▇▇▇▇▇▇▇▇
+▇▇▇▇▇───▇▇▇▇▇──▇▇▇▇────▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇───────────▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇─────────────▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇──────────────▇▇▇▇▇▇▇▇
+▇▇▇▇──────▇▇▇─▇▇▇────────▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇─────────▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇────────────▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇────────────────▇▇▇▇▇▇▇▇
+▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇───▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇
+▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇
+▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇
+▇▇▇▇▇▇▇▇▇▇───────▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇──────────────▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇──▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇─────────────▇▇▇▇▇▇▇▇▇▇▇
+▇▇▇▇▇▇▇▇▇────────────▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇───────────────▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇──▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇─────────────▇▇▇▇▇▇▇▇▇▇
+▇▇▇▇▇▇▇▇─────▇▇▇─────▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇────▇▇▇──▇▇─────▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇───▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇───▇▇▇▇▇────▇▇▇▇▇▇▇▇▇
+▇▇▇▇▇▇▇────▇▇▇▇▇▇────▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇──▇▇▇▇▇──▇▇▇▇───▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇────▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇──▇▇▇▇▇▇▇───▇▇▇▇▇▇▇▇▇
+▇▇▇▇▇▇▇───▇▇▇▇▇▇▇▇───▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇──▇▇▇▇▇──▇▇▇▇▇──▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇─────▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇──▇▇▇▇▇▇▇────▇▇▇▇▇▇▇▇
+▇▇▇▇▇▇▇───▇▇▇▇▇▇▇▇▇──▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇─▇▇▇▇▇▇──▇▇▇▇▇──▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇──▇───▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇──▇▇▇▇▇▇▇────▇▇▇▇▇▇▇▇
+▇▇▇▇▇▇▇▇───▇▇▇▇▇▇▇▇──▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇──▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇───▇───▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇──▇▇▇▇▇▇▇────▇▇▇▇▇▇▇▇
+▇▇▇▇▇▇▇▇─────▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇──▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇──▇▇───▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇──▇▇▇▇▇▇────▇▇▇▇▇▇▇▇▇
+▇▇▇▇▇▇▇▇▇────────▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇──▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇───▇▇▇───▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇────────────▇▇▇▇▇▇▇▇▇
+▇▇▇▇▇▇▇▇▇▇▇────────▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇──▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇──▇▇▇▇───▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇──────────▇▇▇▇▇▇▇▇▇▇▇
+▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇─────▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇──▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇──▇▇▇▇────▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇───▇▇──────▇▇▇▇▇▇▇▇▇▇
+▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇────▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇──▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇───────────▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇──▇▇▇▇▇▇───▇▇▇▇▇▇▇▇▇▇
+▇▇▇▇▇▇▇──▇▇▇▇▇▇▇▇▇───▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇──▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇──▇▇▇▇▇▇───▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇──▇▇▇▇▇▇───▇▇▇▇▇▇▇▇▇▇
+▇▇▇▇▇▇▇──▇▇▇▇▇▇▇▇▇───▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇──▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇───▇▇▇▇▇▇▇───▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇──▇▇▇▇▇▇───▇▇▇▇▇▇▇▇▇▇
+▇▇▇▇▇▇▇───▇▇▇▇▇▇▇▇───▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇──▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇──▇▇▇▇▇▇▇▇───▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇──▇▇▇▇▇▇▇──▇▇─▇▇▇▇▇▇▇
+▇▇▇▇▇▇▇────▇▇▇▇▇▇────▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇──▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇───▇▇▇▇▇▇▇▇────▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇──▇▇▇▇▇▇▇─────▇▇▇▇▇▇▇
+▇▇▇▇▇▇▇─────────────▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇────▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇────▇▇▇▇▇▇▇▇─────▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇────▇▇▇▇▇▇─────▇▇▇▇▇▇▇
+▇▇▇▇▇▇▇────────────▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇────────▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇──────▇▇▇▇▇▇───────▇▇▇▇▇▇▇▇▇▇▇▇────────▇▇▇▇────▇▇▇▇▇▇▇▇
+▇▇▇▇▇▇▇▇▇▇▇▇▇───▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇
+▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇
+▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇
+▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇
+-->  
+<html>  
+<head>
+<!-- Clarity tracking code for https://www.musestar.cc/ --><script>    (function(c,l,a,r,i,t,y){        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i+"?ref=bwt";        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);    })(window, document, "clarity", "script", "fvlvixulu7");</script><meta name="referrer" content="no-referrer"><meta charset="UTF-8">
+<meta name="referrer" content="no-referrer">  
+<title>葬送的芙莉莲ฅ^≧ω≦^ฅ缪斯星动漫-在线高清观看下载</title> 
+<link rel="shortcut icon" href="https://www.musestar.cc/favicon.ico">
+<meta name='keywords' content='葬送的芙莉莲,动漫,番剧,在线观看,高清,下载,樱花动漫,缪斯星,MUSESTAR'>
+<meta name="description" content="改编自原作山田钟人，作画阿部司的同名漫画。在打倒了魔王的勇者一行人当中，魔法使芙莉莲是一位精灵，她和另外三人有着不一样的地方。生活在“之后”的世界里，她感受到了什么；留下来的人们所编织的葬送与祈祷又意味着什么……
+　　故事将从“冒险的结束”开始。这是讲述英雄们的活法的，日后谈奇幻作品！">
+<!--
+<link rel="stylesheet" type="text/css" href="https://www.musestar.cc/files/newstyle.css">
+<link rel="stylesheet" type="text/css" href="https://www.musestar.cc/files/newblue.css" name="skin">
+<link rel="stylesheet" type="text/css" href="https://www.musestar.cc/files/newblack.css" name="color">
+-->
+<link rel="stylesheet" type="text/css" href="https://dlink.host/1drv/aHR0cHM6Ly8xZHJ2Lm1zL3UvcyFBZ1hsWVR6S1JLMDBraGVnYzY2MmxWWUdiNTY2P2U9c3Y5ajJP.css">
+<link rel="stylesheet" type="text/css" href="https://dlink.host/1drv/aHR0cHM6Ly8xZHJ2Lm1zL3UvcyFBZ1hsWVR6S1JLMDBraFpJTXV1NDZFMmFYZ3BZP2U9d2xINGRm.css" name="skin">
+<link rel="stylesheet" type="text/css" href="https://dlink.host/1drv/aHR0cHM6Ly8xZHJ2Lm1zL3UvcyFBZ1hsWVR6S1JLMDBraFVwZ25hY3l6cmRQZ3JxP2U9aE5Yc3dz.css" name="color">
+<!--
+<script src="https://www.musestar.cc/files/hls.js"></script>
+<script src="https://www.musestar.cc/files/DPlayer.js"></script>
+-->
+<script src="https://dlink.host/1drv/aHR0cHM6Ly8xZHJ2Lm1zL3UvcyFBZ1hsWVR6S1JLMDBraFRSZEN3dGNPMHJPbEVwP2U9RWRvc3pY.js"></script>
+<script src="https://dlink.host/1drv/aHR0cHM6Ly8xZHJ2Lm1zL3UvcyFBZ1hsWVR6S1JLMDBrZzdoUVlLLWN0Mm00WDZoP2U9VDE0ZHlW.js"></script>
+</head>
+<body class="bstem">
+	<div>
+		<style> 
+			body {
+			  background:url("https://s1.imagehub.cc/images/2023/09/30/FrierenBeyondJourneysEnd-bg1.jpeg")  no-repeat center center;   /*加载背景图*/   /* 背景图不平铺 */
+			  background-size:cover;  /* 让背景图基于容器大小伸缩 */
+			  background-attachment:fixed;        /* 当内容高度大于图片高度时，背景图像的位置相对于viewport固定 */     
+			  background-color:#CCCCCC;   /* 设置背景颜色，背景图加载过程中会显示背景色 */
+			}
+		   </style>
+	</div>	
+    <div id="topnav" class="head_box">    <div class="header">
+		<div class="head_a">
+		<div class="head_menu_a hidden_xs hidden_mi">
+			<script type="text/javascript" src="https://www.musestar.cc/files/newanimationhead.js"></script>
+	      </div>	
+		</div>	    		
+	 </div>	 		
+   </div>	 
+
+    <div class="detail_list_box">
+         <div class="detail_list">
+				<div class="content_box clearfix">
+					<div class="content_thumb fl">											
+						<a class="vodlist_thumb lazyload" style="background-image: url(https://s1.imagehub.cc/images/2023/09/29/FrierenBeyondJourneysEnd.jpeg);"><span class="play hidden_xs"></span>
+						</a>								
+					</div>
+					<div class="content_detail content_top fl">
+						<div class="pannel_head clearfix">
+							<h1 class="title">葬送的芙莉莲</h1>
+							<p><font color="white">别名：葬送のフリーレン</font></p>
+						</div>
+                    </div>
+                    <div class="content_detail content_min fl">
+                        <ul>	
+						<li class="data">
+							<span class="text_muted hidden_xs">上映时间：</span><a>2023-09-29</a><span class="split_line"></span>
+							<span class="text_muted hidden_xs">地区：</span><a>日本</a><span class="split_line"></span>
+							<span class="text_muted hidden_xs">类型：</span><a>治愈</a>
+						</li>
+						<li class="data"><span>状态：</span><a><script type="text/javascript" src="https://www.musestar.cc/animation/files/FrierenBeyondJourneysEnd.js"></script></a></li>
+						</li>
+					</li>
+					<li class="data"><span>官网：</span><a href="https://frieren-anime.jp" target="_blank">https://frieren-anime.jp</a></li>
+					</li>
+						</ul>
+					</div>
+					<div class="content_detail content_min content_btn fl">			    
+<div class="playbtn o_play">
+	<a class="btn btn_primary" href="https://www.musestar.cc/animation/FrierenBeyondJourneysEnd/01">立即播放</a>
+                    </div>
+                 </div>
+             </div>
+          </div>
+       </div>
+     </div>
+    <div class="container ">
+			<div class="pannel clearfix">
+				<div class="tabs">
+					<h3 class="title">动漫介绍</h3>
+				  <div class="content">
+						<div>
+							<p><font size="3">改编自原作山田钟人，作画阿部司的同名漫画。在打倒了魔王的勇者一行人当中，魔法使芙莉莲是一位精灵，她和另外三人有着不一样的地方。生活在“之后”的世界里，她感受到了什么；留下来的人们所编织的葬送与祈祷又意味着什么……
+　　故事将从“冒险的结束”开始。这是讲述英雄们的活法的，日后谈奇幻作品！</font></p>
+						</div>
+				    </div>
+				 </div>
+		      </div>		
+			<div class="pannel clearfix">
+			    <div class="pannel_head clearfix">
+					<h3 class="title">播放列表</h3>
+			            	<p><script type="text/javascript" src="https://www.musestar.cc/animation/files/FrierenBeyondJourneysEnd.js"></script></p>
+							<ul class="content_playlist clearfix">
+								<li><a href="https://mobile.moegirl.org.cn/%E8%91%AC%E9%80%81%E7%9A%84%E8%8A%99%E8%8E%89%E8%8E%B2#.E5.90.84.E8.AF.9D.E6.A0.87.E9.A2.98 " target="_blank">查看更新进度</a></li>
+                        <li><a href="https://www.musestar.cn/index.php/29/dhelp/" target="_blank">下载帮助</a></li>
+							 </ul> 				
+							<h3 class="title">播放源选择</h3>	
+								  </div>
+									  <ul class="content_playlist clearfix">
+                    <li><a href="http://search.musestar.cc/animation/FrierenBeyondJourneysEnd">第三方播放源</a></li>
+					<li><a href="https://www.musestar.cc/animation/FrierenBeyondJourneysEnd/lache">芙莉莲的自我拉扯</a></li>
+                    <li><a href="https://www.musestar.cc/animation/FrierenBeyondJourneysEnd/01">第1集</a></li>
+                    <li><a href="https://www.musestar.cc/animation/FrierenBeyondJourneysEnd/02">第2集</a></li>
+                    <li><a href="https://www.musestar.cc/animation/FrierenBeyondJourneysEnd/03">第3集</a></li>
+                    <li><a href="https://www.musestar.cc/animation/FrierenBeyondJourneysEnd/04">第4集</a></li>
+                    <li><a href="https://www.musestar.cc/animation/FrierenBeyondJourneysEnd/05">第5集</a></li>
+                    <li><a href="https://www.musestar.cc/animation/FrierenBeyondJourneysEnd/06">第6集</a></li>
+                    <li><a href="https://www.musestar.cc/animation/FrierenBeyondJourneysEnd/07">第7集</a></li>
+                    <li><a href="https://www.musestar.cc/animation/FrierenBeyondJourneysEnd/08">第8集</a></li>
+                    <li><a href="https://www.musestar.cc/animation/FrierenBeyondJourneysEnd/09">第9集</a></li>
+					<li><a href="https://www.musestar.cc/animation/FrierenBeyondJourneysEnd/09-4K">第9集-4K</a></li>
+                    <li><a href="https://www.musestar.cc/animation/FrierenBeyondJourneysEnd/10">第10集</a></li>
+                    <li><a href="https://www.musestar.cc/animation/FrierenBeyondJourneysEnd/11">第11集</a></li>
+                    <li><a href="https://www.musestar.cc/animation/FrierenBeyondJourneysEnd/12">第12集</a></li>
+					<li><a href="https://www.musestar.cc/animation/FrierenBeyondJourneysEnd/13">第13集</a></li>
+                    <li><a href="https://www.musestar.cc/animation/FrierenBeyondJourneysEnd/14">第14集</a></li>
+                    <li><a href="https://www.musestar.cc/animation/FrierenBeyondJourneysEnd/15">第15集</a></li>
+                    <li><a href="https://www.musestar.cc/animation/FrierenBeyondJourneysEnd/16">第16集</a></li>
+                    <li><a href="https://www.musestar.cc/animation/FrierenBeyondJourneysEnd/1PV">一级魔法使考试篇PV</a></li>
+					<li><a href="https://www.musestar.cc/animation/FrierenBeyondJourneysEnd/17">第17集</a></li>
+                    <li><a href="https://www.musestar.cc/animation/FrierenBeyondJourneysEnd/18">第18集</a></li>
+                    <li><a href="https://www.musestar.cc/animation/FrierenBeyondJourneysEnd/19">第19集</a></li>
+                    <li><a href="https://www.musestar.cc/animation/FrierenBeyondJourneysEnd/20">第20集</a></li>
+                    <li><a href="https://www.musestar.cc/animation/FrierenBeyondJourneysEnd/21">第21集</a></li>
+                    <li><a href="https://www.musestar.cc/animation/FrierenBeyondJourneysEnd/22">第22集</a></li>
+                    <li><a href="https://www.musestar.cc/animation/FrierenBeyondJourneysEnd/23">第23集</a></li>
+                    <li><a href="https://www.musestar.cc/animation/FrierenBeyondJourneysEnd/24">第24集</a></li>
+					<li><a href="https://www.musestar.cc/animation/FrierenBeyondJourneysEnd/25">第25集</a></li>
+					<li><a href="https://www.musestar.cc/animation/FrierenBeyondJourneysEnd/26">第26集</a></li>
+					<li><a href="https://www.musestar.cc/animation/FrierenBeyondJourneysEnd/27">第27集</a></li>
+					<li><a href="https://www.musestar.cc/animation/FrierenBeyondJourneysEnd/28">第28集</a></li>
+									  </ul> 
+									  <h3 class="title">漫画下载</h3>	
+									  <ul class="content_playlist clearfix">
+										<li><a href="https://dlink.host/1drv/aHR0cHM6Ly8xZHJ2Lm1zL2IvcyFBZ1hsWVR6S1JLMDBpUzBRc3NtZS13anFMYWo4P2U9cnQ5TENz.pdf">第1-10话</a></li>
+										<li><a href="https://dlink.host/1drv/aHR0cHM6Ly8xZHJ2Lm1zL2IvcyFBZ1hsWVR6S1JLMDBpUzl1SGl3TkFKMVBTWGZnP2U9Z09PZjhY.pdf">第11-20话</a></li>
+										<li><a href="https://dlink.host/1drv/aHR0cHM6Ly8xZHJ2Lm1zL2IvcyFBZ1hsWVR6S1JLMDBpVEI2RTZqZWh6aElOQ1otP2U9R2M5dDNa.pdf">第21-40话</a></li>
+										<li><a href="https://dlink.host/1drv/aHR0cHM6Ly8xZHJ2Lm1zL2IvcyFBZ1hsWVR6S1JLMDBpVEdpcFFrbHR5ekJhcjc4P2U9VGNIeTR6.pdf">第41-60话</a></li>
+										<li><a href="https://dlink.host/1drv/aHR0cHM6Ly8xZHJ2Lm1zL2IvcyFBZ1hsWVR6S1JLMDBpU3djUTROZEJoN2xGWngxP2U9UzV2Q0dn.pdf">第61-80话</a></li>
+										<li><a href="https://dlink.host/1drv/aHR0cHM6Ly8xZHJ2Lm1zL2IvcyFBZ1hsWVR6S1JLMDBpUzY4d1NDSWlzeVVWMnZkP2U9TEdoSEJz.pdf">第81-103话</a></li>
+										<li><a href="https://dlink.host/1drv/aHR0cHM6Ly8xZHJ2Lm1zL2IvcyFBZ1hsWVR6S1JLMDBpU3NZZlJmeEFEY25lQ241P2U9cnhDR2hF.pdf">第104-107话</a></li>
+										</ul>
+									</div>
+									<div style="text-align: center; background-size: cover;">
+									<img width=350 src="https://moe-counter.anjiurine.top/get/@musestar?theme=rule34" alt="musestar">
+								</div>
+			    <div class="pannel ads_box clearfix hide">
+	      </div>
+
+				<script type="text/javascript" src="https://www.musestar.cc/files/under.js"></script>
+<script src="https://www.musestar.cc/files/dl.js"></script></body>
+</html>

@@ -8309,12 +8309,12 @@ var LevelController = /*#__PURE__*/function (_BasePlaylistControll) {
     levels = levels.filter(function (_ref2) {
       var audioCodec = _ref2.audioCodec,
           videoCodec = _ref2.videoCodec;
-      return (!audioCodec || Object(_utils_codecs__WEBPACK_IMPORTED_MODULE_3__["isCodecSupportedInMp4"])(audioCodec, 'audio')) && (!videoCodec || Object(_utils_codecs__WEBPACK_IMPORTED_MODULE_3__["isCodecSupportedInMp4"])(videoCodec, 'video'));
+      return (!audioCodec || Object(_utils_codecs__WEBPACK_IMPORTED_MODULE_3__["isCodecSupportedInmp4"])(audioCodec, 'audio')) && (!videoCodec || Object(_utils_codecs__WEBPACK_IMPORTED_MODULE_3__["isCodecSupportedInmp4"])(videoCodec, 'video'));
     });
 
     if (data.audioTracks) {
       audioTracks = data.audioTracks.filter(function (track) {
-        return !track.audioCodec || Object(_utils_codecs__WEBPACK_IMPORTED_MODULE_3__["isCodecSupportedInMp4"])(track.audioCodec, 'audio');
+        return !track.audioCodec || Object(_utils_codecs__WEBPACK_IMPORTED_MODULE_3__["isCodecSupportedInmp4"])(track.audioCodec, 'audio');
       }); // Assign ids after filtering as array indices by group-id
 
       Object(_level_helper__WEBPACK_IMPORTED_MODULE_4__["assignTrackIdsByGroup"])(audioTracks);
@@ -14269,19 +14269,19 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _utils_mp4_tools__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../utils/mp4-tools */ "./src/utils/mp4-tools.ts");
 /* harmony import */ var _dummy_demuxed_track__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./dummy-demuxed-track */ "./src/demux/dummy-demuxed-track.ts");
 /**
- * MP4 demuxer
+ * mp4 demuxer
  */
 
 
 
-var MP4Demuxer = /*#__PURE__*/function () {
-  function MP4Demuxer(observer, config) {
+var mp4Demuxer = /*#__PURE__*/function () {
+  function mp4Demuxer(observer, config) {
     this.remainderData = null;
     this.config = void 0;
     this.config = config;
   }
 
-  var _proto = MP4Demuxer.prototype;
+  var _proto = mp4Demuxer.prototype;
 
   _proto.resetTimeStamp = function resetTimeStamp() {};
 
@@ -14289,7 +14289,7 @@ var MP4Demuxer = /*#__PURE__*/function () {
 
   _proto.resetContiguity = function resetContiguity() {};
 
-  MP4Demuxer.probe = function probe(data) {
+  mp4Demuxer.probe = function probe(data) {
     // ensure we find a moof box in the first 16 kB
     return Object(_utils_mp4_tools__WEBPACK_IMPORTED_MODULE_0__["findBox"])({
       data: data,
@@ -14339,16 +14339,16 @@ var MP4Demuxer = /*#__PURE__*/function () {
   };
 
   _proto.demuxSampleAes = function demuxSampleAes(data, keyData, timeOffset) {
-    return Promise.reject(new Error('The MP4 demuxer does not support SAMPLE-AES decryption'));
+    return Promise.reject(new Error('The mp4 demuxer does not support SAMPLE-AES decryption'));
   };
 
   _proto.destroy = function destroy() {};
 
-  return MP4Demuxer;
+  return mp4Demuxer;
 }();
 
-MP4Demuxer.minProbeByteLength = 1024;
-/* harmony default export */ __webpack_exports__["default"] = (MP4Demuxer);
+mp4Demuxer.minProbeByteLength = 1024;
+/* harmony default export */ __webpack_exports__["default"] = (mp4Demuxer);
 
 /***/ }),
 
@@ -15606,12 +15606,12 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-// We are using fixed track IDs for driving the MP4 remuxer
+// We are using fixed track IDs for driving the mp4 remuxer
 // instead of following the TS PIDs.
 // There is no reason not to do this and some browsers/SourceBuffer-demuxers
 // may not like if there are TrackID "switches"
 // See https://github.com/video-dev/hls.js/issues/1331
-// Here we are mapping our internal track types to constant MP4 track IDs
+// Here we are mapping our internal track types to constant mp4 track IDs
 // With MSE currently one can only have one track of each, and we are muxing
 // whatever video/audio rendition in them.
 var RemuxerTrackIdConfig = {
@@ -15901,7 +15901,7 @@ var TSDemuxer = /*#__PURE__*/function () {
               // track PID transiently disappears from the stream
               // this could happen in case of transient missing audio samples for example
               // NOTE this is only the PID of the track as found in TS,
-              // but we are not using this for MP4 track IDs.
+              // but we are not using this for mp4 track IDs.
 
               avcId = parsedPIDs.avc;
 
@@ -19161,12 +19161,12 @@ var LEVEL_PLAYLIST_REGEX_FAST = new RegExp([/#EXTINF:\s*(\d*(?:\.\d+)?)(?:,(.*)\
 /#.*/.source // All other non-segment oriented tags will match with all groups empty
 ].join('|'), 'g');
 var LEVEL_PLAYLIST_REGEX_SLOW = new RegExp([/#(EXTM3U)/.source, /#EXT-X-(PLAYLIST-TYPE):(.+)/.source, /#EXT-X-(MEDIA-SEQUENCE): *(\d+)/.source, /#EXT-X-(SKIP):(.+)/.source, /#EXT-X-(TARGETDURATION): *(\d+)/.source, /#EXT-X-(KEY):(.+)/.source, /#EXT-X-(START):(.+)/.source, /#EXT-X-(ENDLIST)/.source, /#EXT-X-(DISCONTINUITY-SEQ)UENCE: *(\d+)/.source, /#EXT-X-(DIS)CONTINUITY/.source, /#EXT-X-(VERSION):(\d+)/.source, /#EXT-X-(MAP):(.+)/.source, /#EXT-X-(SERVER-CONTROL):(.+)/.source, /#EXT-X-(PART-INF):(.+)/.source, /#EXT-X-(GAP)/.source, /#EXT-X-(BITRATE):\s*(\d+)/.source, /#EXT-X-(PART):(.+)/.source, /#EXT-X-(PRELOAD-HINT):(.+)/.source, /#EXT-X-(RENDITION-REPORT):(.+)/.source, /(#)([^:]*):(.*)/.source, /(#)(.*)(?:.*)\r?\n?/.source].join('|'));
-var MP4_REGEX_SUFFIX = /\.(mp4|m4s|m4v|m4a)$/i;
+var mp4_REGEX_SUFFIX = /\.(mp4|m4s|m4v|m4a)$/i;
 
-function isMP4Url(url) {
+function ismp4Url(url) {
   var _URLToolkit$parseURL$, _URLToolkit$parseURL;
 
-  return MP4_REGEX_SUFFIX.test((_URLToolkit$parseURL$ = (_URLToolkit$parseURL = url_toolkit__WEBPACK_IMPORTED_MODULE_1__["parseURL"](url)) === null || _URLToolkit$parseURL === void 0 ? void 0 : _URLToolkit$parseURL.path) != null ? _URLToolkit$parseURL$ : '');
+  return mp4_REGEX_SUFFIX.test((_URLToolkit$parseURL$ = (_URLToolkit$parseURL = url_toolkit__WEBPACK_IMPORTED_MODULE_1__["parseURL"](url)) === null || _URLToolkit$parseURL === void 0 ? void 0 : _URLToolkit$parseURL.path) != null ? _URLToolkit$parseURL$ : '');
 }
 
 var M3U8Parser = /*#__PURE__*/function () {
@@ -19645,12 +19645,12 @@ var M3U8Parser = /*#__PURE__*/function () {
 
         if (!firstFragment.initSegment) {
           // this is a bit lurky but HLS really has no other way to tell us
-          // if the fragments are TS or MP4, except if we download them :/
+          // if the fragments are TS or mp4, except if we download them :/
           // but this is to be able to handle SIDX.
           if (level.fragments.every(function (frag) {
-            return frag.relurl && isMP4Url(frag.relurl);
+            return frag.relurl && ismp4Url(frag.relurl);
           })) {
-            _utils_logger__WEBPACK_IMPORTED_MODULE_6__["logger"].warn('MP4 fragments found but no init segment (probably no MAP, incomplete M3U8), trying to fetch SIDX');
+            _utils_logger__WEBPACK_IMPORTED_MODULE_6__["logger"].warn('mp4 fragments found but no init segment (probably no MAP, incomplete M3U8), trying to fetch SIDX');
             frag = new _fragment__WEBPACK_IMPORTED_MODULE_2__["Fragment"](type, baseurl);
             frag.relurl = lastFragment.relurl;
             frag.level = id;
@@ -20476,15 +20476,15 @@ var AAC = /*#__PURE__*/function () {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /**
- * Generate MP4 Box
+ * Generate mp4 Box
  */
 var UINT32_MAX = Math.pow(2, 32) - 1;
 
-var MP4 = /*#__PURE__*/function () {
-  function MP4() {}
+var mp4 = /*#__PURE__*/function () {
+  function mp4() {}
 
-  MP4.init = function init() {
-    MP4.types = {
+  mp4.init = function init() {
+    mp4.types = {
       avc1: [],
       // codingname
       avcC: [],
@@ -20525,9 +20525,9 @@ var MP4 = /*#__PURE__*/function () {
     };
     var i;
 
-    for (i in MP4.types) {
-      if (MP4.types.hasOwnProperty(i)) {
-        MP4.types[i] = [i.charCodeAt(0), i.charCodeAt(1), i.charCodeAt(2), i.charCodeAt(3)];
+    for (i in mp4.types) {
+      if (mp4.types.hasOwnProperty(i)) {
+        mp4.types[i] = [i.charCodeAt(0), i.charCodeAt(1), i.charCodeAt(2), i.charCodeAt(3)];
       }
     }
 
@@ -20549,7 +20549,7 @@ var MP4 = /*#__PURE__*/function () {
     0x00, 0x00, 0x00, 0x00, // reserved
     0x53, 0x6f, 0x75, 0x6e, 0x64, 0x48, 0x61, 0x6e, 0x64, 0x6c, 0x65, 0x72, 0x00 // name: 'SoundHandler'
     ]);
-    MP4.HDLR_TYPES = {
+    mp4.HDLR_TYPES = {
       video: videoHdlr,
       audio: audioHdlr
     };
@@ -20565,23 +20565,23 @@ var MP4 = /*#__PURE__*/function () {
     0x00, 0x00, 0x00, // flags
     0x00, 0x00, 0x00, 0x00 // entry_count
     ]);
-    MP4.STTS = MP4.STSC = MP4.STCO = stco;
-    MP4.STSZ = new Uint8Array([0x00, // version
+    mp4.STTS = mp4.STSC = mp4.STCO = stco;
+    mp4.STSZ = new Uint8Array([0x00, // version
     0x00, 0x00, 0x00, // flags
     0x00, 0x00, 0x00, 0x00, // sample_size
     0x00, 0x00, 0x00, 0x00 // sample_count
     ]);
-    MP4.VMHD = new Uint8Array([0x00, // version
+    mp4.VMHD = new Uint8Array([0x00, // version
     0x00, 0x00, 0x01, // flags
     0x00, 0x00, // graphicsmode
     0x00, 0x00, 0x00, 0x00, 0x00, 0x00 // opcolor
     ]);
-    MP4.SMHD = new Uint8Array([0x00, // version
+    mp4.SMHD = new Uint8Array([0x00, // version
     0x00, 0x00, 0x00, // flags
     0x00, 0x00, // balance
     0x00, 0x00 // reserved
     ]);
-    MP4.STSD = new Uint8Array([0x00, // version 0
+    mp4.STSD = new Uint8Array([0x00, // version 0
     0x00, 0x00, 0x00, // flags
     0x00, 0x00, 0x00, 0x01]); // entry_count
 
@@ -20590,11 +20590,11 @@ var MP4 = /*#__PURE__*/function () {
     var avc1Brand = new Uint8Array([97, 118, 99, 49]); // avc1
 
     var minorVersion = new Uint8Array([0, 0, 0, 1]);
-    MP4.FTYP = MP4.box(MP4.types.ftyp, majorBrand, minorVersion, majorBrand, avc1Brand);
-    MP4.DINF = MP4.box(MP4.types.dinf, MP4.box(MP4.types.dref, dref));
+    mp4.FTYP = mp4.box(mp4.types.ftyp, majorBrand, minorVersion, majorBrand, avc1Brand);
+    mp4.DINF = mp4.box(mp4.types.dinf, mp4.box(mp4.types.dref, dref));
   };
 
-  MP4.box = function box(type) {
+  mp4.box = function box(type) {
     var size = 8;
 
     for (var _len = arguments.length, payload = new Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
@@ -20624,19 +20624,19 @@ var MP4 = /*#__PURE__*/function () {
     return result;
   };
 
-  MP4.hdlr = function hdlr(type) {
-    return MP4.box(MP4.types.hdlr, MP4.HDLR_TYPES[type]);
+  mp4.hdlr = function hdlr(type) {
+    return mp4.box(mp4.types.hdlr, mp4.HDLR_TYPES[type]);
   };
 
-  MP4.mdat = function mdat(data) {
-    return MP4.box(MP4.types.mdat, data);
+  mp4.mdat = function mdat(data) {
+    return mp4.box(mp4.types.mdat, data);
   };
 
-  MP4.mdhd = function mdhd(timescale, duration) {
+  mp4.mdhd = function mdhd(timescale, duration) {
     duration *= timescale;
     var upperWordDuration = Math.floor(duration / (UINT32_MAX + 1));
     var lowerWordDuration = Math.floor(duration % (UINT32_MAX + 1));
-    return MP4.box(MP4.types.mdhd, new Uint8Array([0x01, // version 1
+    return mp4.box(mp4.types.mdhd, new Uint8Array([0x01, // version 1
     0x00, 0x00, 0x00, // flags
     0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, // creation_time
     0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x03, // modification_time
@@ -20645,55 +20645,55 @@ var MP4 = /*#__PURE__*/function () {
     0x00, 0x00]));
   };
 
-  MP4.mdia = function mdia(track) {
-    return MP4.box(MP4.types.mdia, MP4.mdhd(track.timescale, track.duration), MP4.hdlr(track.type), MP4.minf(track));
+  mp4.mdia = function mdia(track) {
+    return mp4.box(mp4.types.mdia, mp4.mdhd(track.timescale, track.duration), mp4.hdlr(track.type), mp4.minf(track));
   };
 
-  MP4.mfhd = function mfhd(sequenceNumber) {
-    return MP4.box(MP4.types.mfhd, new Uint8Array([0x00, 0x00, 0x00, 0x00, // flags
+  mp4.mfhd = function mfhd(sequenceNumber) {
+    return mp4.box(mp4.types.mfhd, new Uint8Array([0x00, 0x00, 0x00, 0x00, // flags
     sequenceNumber >> 24, sequenceNumber >> 16 & 0xff, sequenceNumber >> 8 & 0xff, sequenceNumber & 0xff // sequence_number
     ]));
   };
 
-  MP4.minf = function minf(track) {
+  mp4.minf = function minf(track) {
     if (track.type === 'audio') {
-      return MP4.box(MP4.types.minf, MP4.box(MP4.types.smhd, MP4.SMHD), MP4.DINF, MP4.stbl(track));
+      return mp4.box(mp4.types.minf, mp4.box(mp4.types.smhd, mp4.SMHD), mp4.DINF, mp4.stbl(track));
     } else {
-      return MP4.box(MP4.types.minf, MP4.box(MP4.types.vmhd, MP4.VMHD), MP4.DINF, MP4.stbl(track));
+      return mp4.box(mp4.types.minf, mp4.box(mp4.types.vmhd, mp4.VMHD), mp4.DINF, mp4.stbl(track));
     }
   };
 
-  MP4.moof = function moof(sn, baseMediaDecodeTime, track) {
-    return MP4.box(MP4.types.moof, MP4.mfhd(sn), MP4.traf(track, baseMediaDecodeTime));
+  mp4.moof = function moof(sn, baseMediaDecodeTime, track) {
+    return mp4.box(mp4.types.moof, mp4.mfhd(sn), mp4.traf(track, baseMediaDecodeTime));
   }
   /**
    * @param tracks... (optional) {array} the tracks associated with this movie
    */
   ;
 
-  MP4.moov = function moov(tracks) {
+  mp4.moov = function moov(tracks) {
     var i = tracks.length;
     var boxes = [];
 
     while (i--) {
-      boxes[i] = MP4.trak(tracks[i]);
+      boxes[i] = mp4.trak(tracks[i]);
     }
 
-    return MP4.box.apply(null, [MP4.types.moov, MP4.mvhd(tracks[0].timescale, tracks[0].duration)].concat(boxes).concat(MP4.mvex(tracks)));
+    return mp4.box.apply(null, [mp4.types.moov, mp4.mvhd(tracks[0].timescale, tracks[0].duration)].concat(boxes).concat(mp4.mvex(tracks)));
   };
 
-  MP4.mvex = function mvex(tracks) {
+  mp4.mvex = function mvex(tracks) {
     var i = tracks.length;
     var boxes = [];
 
     while (i--) {
-      boxes[i] = MP4.trex(tracks[i]);
+      boxes[i] = mp4.trex(tracks[i]);
     }
 
-    return MP4.box.apply(null, [MP4.types.mvex].concat(boxes));
+    return mp4.box.apply(null, [mp4.types.mvex].concat(boxes));
   };
 
-  MP4.mvhd = function mvhd(timescale, duration) {
+  mp4.mvhd = function mvhd(timescale, duration) {
     duration *= timescale;
     var upperWordDuration = Math.floor(duration / (UINT32_MAX + 1));
     var lowerWordDuration = Math.floor(duration % (UINT32_MAX + 1));
@@ -20711,10 +20711,10 @@ var MP4 = /*#__PURE__*/function () {
     0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, // pre_defined
     0xff, 0xff, 0xff, 0xff // next_track_ID
     ]);
-    return MP4.box(MP4.types.mvhd, bytes);
+    return mp4.box(mp4.types.mvhd, bytes);
   };
 
-  MP4.sdtp = function sdtp(track) {
+  mp4.sdtp = function sdtp(track) {
     var samples = track.samples || [];
     var bytes = new Uint8Array(4 + samples.length);
     var i;
@@ -20726,14 +20726,14 @@ var MP4 = /*#__PURE__*/function () {
       bytes[i + 4] = flags.dependsOn << 4 | flags.isDependedOn << 2 | flags.hasRedundancy;
     }
 
-    return MP4.box(MP4.types.sdtp, bytes);
+    return mp4.box(mp4.types.sdtp, bytes);
   };
 
-  MP4.stbl = function stbl(track) {
-    return MP4.box(MP4.types.stbl, MP4.stsd(track), MP4.box(MP4.types.stts, MP4.STTS), MP4.box(MP4.types.stsc, MP4.STSC), MP4.box(MP4.types.stsz, MP4.STSZ), MP4.box(MP4.types.stco, MP4.STCO));
+  mp4.stbl = function stbl(track) {
+    return mp4.box(mp4.types.stbl, mp4.stsd(track), mp4.box(mp4.types.stts, mp4.STTS), mp4.box(mp4.types.stsc, mp4.STSC), mp4.box(mp4.types.stsz, mp4.STSZ), mp4.box(mp4.types.stco, mp4.STCO));
   };
 
-  MP4.avc1 = function avc1(track) {
+  mp4.avc1 = function avc1(track) {
     var sps = [];
     var pps = [];
     var i;
@@ -20758,7 +20758,7 @@ var MP4 = /*#__PURE__*/function () {
       pps = pps.concat(Array.prototype.slice.call(data));
     }
 
-    var avcc = MP4.box(MP4.types.avcC, new Uint8Array([0x01, // version
+    var avcc = mp4.box(mp4.types.avcC, new Uint8Array([0x01, // version
     sps[3], // profile
     sps[4], // profile compat
     sps[5], // level
@@ -20771,7 +20771,7 @@ var MP4 = /*#__PURE__*/function () {
     var height = track.height;
     var hSpacing = track.pixelRatio[0];
     var vSpacing = track.pixelRatio[1];
-    return MP4.box(MP4.types.avc1, new Uint8Array([0x00, 0x00, 0x00, // reserved
+    return mp4.box(mp4.types.avc1, new Uint8Array([0x00, 0x00, 0x00, // reserved
     0x00, 0x00, 0x00, // reserved
     0x00, 0x01, // data_reference_index
     0x00, 0x00, // pre_defined
@@ -20787,15 +20787,15 @@ var MP4 = /*#__PURE__*/function () {
     0x79, 0x6d, 0x6f, 0x74, 0x69, 0x6f, 0x6e, 0x2f, 0x68, 0x6c, 0x73, 0x2e, 0x6a, 0x73, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, // compressorname
     0x00, 0x18, // depth = 24
     0x11, 0x11]), // pre_defined = -1
-    avcc, MP4.box(MP4.types.btrt, new Uint8Array([0x00, 0x1c, 0x9c, 0x80, // bufferSizeDB
+    avcc, mp4.box(mp4.types.btrt, new Uint8Array([0x00, 0x1c, 0x9c, 0x80, // bufferSizeDB
     0x00, 0x2d, 0xc6, 0xc0, // maxBitrate
     0x00, 0x2d, 0xc6, 0xc0])), // avgBitrate
-    MP4.box(MP4.types.pasp, new Uint8Array([hSpacing >> 24, // hSpacing
+    mp4.box(mp4.types.pasp, new Uint8Array([hSpacing >> 24, // hSpacing
     hSpacing >> 16 & 0xff, hSpacing >> 8 & 0xff, hSpacing & 0xff, vSpacing >> 24, // vSpacing
     vSpacing >> 16 & 0xff, vSpacing >> 8 & 0xff, vSpacing & 0xff])));
   };
 
-  MP4.esds = function esds(track) {
+  mp4.esds = function esds(track) {
     var configlen = track.config.length;
     return new Uint8Array([0x00, // version 0
     0x00, 0x00, 0x00, // flags
@@ -20814,9 +20814,9 @@ var MP4 = /*#__PURE__*/function () {
     ].concat([configlen]).concat(track.config).concat([0x06, 0x01, 0x02])); // GASpecificConfig)); // length + audio config descriptor
   };
 
-  MP4.mp4a = function mp4a(track) {
+  mp4.mp4a = function mp4a(track) {
     var samplerate = track.samplerate;
-    return MP4.box(MP4.types.mp4a, new Uint8Array([0x00, 0x00, 0x00, // reserved
+    return mp4.box(mp4.types.mp4a, new Uint8Array([0x00, 0x00, 0x00, // reserved
     0x00, 0x00, 0x00, // reserved
     0x00, 0x01, // data_reference_index
     0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, // reserved
@@ -20824,12 +20824,12 @@ var MP4 = /*#__PURE__*/function () {
     0x00, 0x10, // sampleSize:16bits
     0x00, 0x00, 0x00, 0x00, // reserved2
     samplerate >> 8 & 0xff, samplerate & 0xff, //
-    0x00, 0x00]), MP4.box(MP4.types.esds, MP4.esds(track)));
+    0x00, 0x00]), mp4.box(mp4.types.esds, mp4.esds(track)));
   };
 
-  MP4.mp3 = function mp3(track) {
+  mp4.mp3 = function mp3(track) {
     var samplerate = track.samplerate;
-    return MP4.box(MP4.types['.mp3'], new Uint8Array([0x00, 0x00, 0x00, // reserved
+    return mp4.box(mp4.types['.mp3'], new Uint8Array([0x00, 0x00, 0x00, // reserved
     0x00, 0x00, 0x00, // reserved
     0x00, 0x01, // data_reference_index
     0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, // reserved
@@ -20840,26 +20840,26 @@ var MP4 = /*#__PURE__*/function () {
     0x00, 0x00]));
   };
 
-  MP4.stsd = function stsd(track) {
+  mp4.stsd = function stsd(track) {
     if (track.type === 'audio') {
       if (!track.isAAC && track.codec === 'mp3') {
-        return MP4.box(MP4.types.stsd, MP4.STSD, MP4.mp3(track));
+        return mp4.box(mp4.types.stsd, mp4.STSD, mp4.mp3(track));
       }
 
-      return MP4.box(MP4.types.stsd, MP4.STSD, MP4.mp4a(track));
+      return mp4.box(mp4.types.stsd, mp4.STSD, mp4.mp4a(track));
     } else {
-      return MP4.box(MP4.types.stsd, MP4.STSD, MP4.avc1(track));
+      return mp4.box(mp4.types.stsd, mp4.STSD, mp4.avc1(track));
     }
   };
 
-  MP4.tkhd = function tkhd(track) {
+  mp4.tkhd = function tkhd(track) {
     var id = track.id;
     var duration = track.duration * track.timescale;
     var width = track.width;
     var height = track.height;
     var upperWordDuration = Math.floor(duration / (UINT32_MAX + 1));
     var lowerWordDuration = Math.floor(duration % (UINT32_MAX + 1));
-    return MP4.box(MP4.types.tkhd, new Uint8Array([0x01, // version 1
+    return mp4.box(mp4.types.tkhd, new Uint8Array([0x01, // version 1
     0x00, 0x00, 0x07, // flags
     0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, // creation_time
     0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x03, // modification_time
@@ -20876,17 +20876,17 @@ var MP4 = /*#__PURE__*/function () {
     ]));
   };
 
-  MP4.traf = function traf(track, baseMediaDecodeTime) {
-    var sampleDependencyTable = MP4.sdtp(track);
+  mp4.traf = function traf(track, baseMediaDecodeTime) {
+    var sampleDependencyTable = mp4.sdtp(track);
     var id = track.id;
     var upperWordBaseMediaDecodeTime = Math.floor(baseMediaDecodeTime / (UINT32_MAX + 1));
     var lowerWordBaseMediaDecodeTime = Math.floor(baseMediaDecodeTime % (UINT32_MAX + 1));
-    return MP4.box(MP4.types.traf, MP4.box(MP4.types.tfhd, new Uint8Array([0x00, // version 0
+    return mp4.box(mp4.types.traf, mp4.box(mp4.types.tfhd, new Uint8Array([0x00, // version 0
     0x00, 0x00, 0x00, // flags
     id >> 24, id >> 16 & 0xff, id >> 8 & 0xff, id & 0xff // track_ID
-    ])), MP4.box(MP4.types.tfdt, new Uint8Array([0x01, // version 1
+    ])), mp4.box(mp4.types.tfdt, new Uint8Array([0x01, // version 1
     0x00, 0x00, 0x00, // flags
-    upperWordBaseMediaDecodeTime >> 24, upperWordBaseMediaDecodeTime >> 16 & 0xff, upperWordBaseMediaDecodeTime >> 8 & 0xff, upperWordBaseMediaDecodeTime & 0xff, lowerWordBaseMediaDecodeTime >> 24, lowerWordBaseMediaDecodeTime >> 16 & 0xff, lowerWordBaseMediaDecodeTime >> 8 & 0xff, lowerWordBaseMediaDecodeTime & 0xff])), MP4.trun(track, sampleDependencyTable.length + 16 + // tfhd
+    upperWordBaseMediaDecodeTime >> 24, upperWordBaseMediaDecodeTime >> 16 & 0xff, upperWordBaseMediaDecodeTime >> 8 & 0xff, upperWordBaseMediaDecodeTime & 0xff, lowerWordBaseMediaDecodeTime >> 24, lowerWordBaseMediaDecodeTime >> 16 & 0xff, lowerWordBaseMediaDecodeTime >> 8 & 0xff, lowerWordBaseMediaDecodeTime & 0xff])), mp4.trun(track, sampleDependencyTable.length + 16 + // tfhd
     20 + // tfdt
     8 + // traf header
     16 + // mfhd
@@ -20901,14 +20901,14 @@ var MP4 = /*#__PURE__*/function () {
    */
   ;
 
-  MP4.trak = function trak(track) {
+  mp4.trak = function trak(track) {
     track.duration = track.duration || 0xffffffff;
-    return MP4.box(MP4.types.trak, MP4.tkhd(track), MP4.mdia(track));
+    return mp4.box(mp4.types.trak, mp4.tkhd(track), mp4.mdia(track));
   };
 
-  MP4.trex = function trex(track) {
+  mp4.trex = function trex(track) {
     var id = track.id;
-    return MP4.box(MP4.types.trex, new Uint8Array([0x00, // version 0
+    return mp4.box(mp4.types.trex, new Uint8Array([0x00, // version 0
     0x00, 0x00, 0x00, // flags
     id >> 24, id >> 16 & 0xff, id >> 8 & 0xff, id & 0xff, // track_ID
     0x00, 0x00, 0x00, 0x01, // default_sample_description_index
@@ -20918,7 +20918,7 @@ var MP4 = /*#__PURE__*/function () {
     ]));
   };
 
-  MP4.trun = function trun(track, offset) {
+  mp4.trun = function trun(track, offset) {
     var samples = track.samples || [];
     var len = samples.length;
     var arraylen = 12 + 16 * len;
@@ -20949,36 +20949,36 @@ var MP4 = /*#__PURE__*/function () {
       ], 12 + 16 * i);
     }
 
-    return MP4.box(MP4.types.trun, array);
+    return mp4.box(mp4.types.trun, array);
   };
 
-  MP4.initSegment = function initSegment(tracks) {
-    if (!MP4.types) {
-      MP4.init();
+  mp4.initSegment = function initSegment(tracks) {
+    if (!mp4.types) {
+      mp4.init();
     }
 
-    var movie = MP4.moov(tracks);
-    var result = new Uint8Array(MP4.FTYP.byteLength + movie.byteLength);
-    result.set(MP4.FTYP);
-    result.set(movie, MP4.FTYP.byteLength);
+    var movie = mp4.moov(tracks);
+    var result = new Uint8Array(mp4.FTYP.byteLength + movie.byteLength);
+    result.set(mp4.FTYP);
+    result.set(movie, mp4.FTYP.byteLength);
     return result;
   };
 
-  return MP4;
+  return mp4;
 }();
 
-MP4.types = void 0;
-MP4.HDLR_TYPES = void 0;
-MP4.STTS = void 0;
-MP4.STSC = void 0;
-MP4.STCO = void 0;
-MP4.STSZ = void 0;
-MP4.VMHD = void 0;
-MP4.SMHD = void 0;
-MP4.STSD = void 0;
-MP4.FTYP = void 0;
-MP4.DINF = void 0;
-/* harmony default export */ __webpack_exports__["default"] = (MP4);
+mp4.types = void 0;
+mp4.HDLR_TYPES = void 0;
+mp4.STTS = void 0;
+mp4.STSC = void 0;
+mp4.STCO = void 0;
+mp4.STSZ = void 0;
+mp4.VMHD = void 0;
+mp4.SMHD = void 0;
+mp4.STSD = void 0;
+mp4.FTYP = void 0;
+mp4.DINF = void 0;
+/* harmony default export */ __webpack_exports__["default"] = (mp4);
 
 /***/ }),
 
@@ -20991,7 +20991,7 @@ MP4.DINF = void 0;
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return MP4Remuxer; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return mp4Remuxer; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "normalizePts", function() { return normalizePts; });
 /* harmony import */ var _home_runner_work_hls_js_hls_js_src_polyfills_number__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./src/polyfills/number */ "./src/polyfills/number.ts");
 /* harmony import */ var _aac_helper__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./aac-helper */ "./src/remux/aac-helper.ts");
@@ -21020,8 +21020,8 @@ var chromeVersion = null;
 var safariWebkitVersion = null;
 var requiresPositiveDts = false;
 
-var MP4Remuxer = /*#__PURE__*/function () {
-  function MP4Remuxer(observer, config, typeSupported, vendor) {
+var mp4Remuxer = /*#__PURE__*/function () {
+  function mp4Remuxer(observer, config, typeSupported, vendor) {
     if (vendor === void 0) {
       vendor = '';
     }
@@ -21056,7 +21056,7 @@ var MP4Remuxer = /*#__PURE__*/function () {
     requiresPositiveDts = !!chromeVersion && chromeVersion < 75 || !!safariWebkitVersion && safariWebkitVersion < 600;
   }
 
-  var _proto = MP4Remuxer.prototype;
+  var _proto = mp4Remuxer.prototype;
 
   _proto.destroy = function destroy() {};
 
@@ -21230,9 +21230,9 @@ var MP4Remuxer = /*#__PURE__*/function () {
     }
 
     if (audioTrack.config && audioSamples.length) {
-      // let's use audio sampling rate as MP4 time scale.
+      // let's use audio sampling rate as mp4 time scale.
       // rationale is that there is a integer nb of audio frames per audio sample (1024 for AAC)
-      // using audio sampling rate here helps having an integer MP4 frame duration
+      // using audio sampling rate here helps having an integer mp4 frame duration
       // this avoids potential rounding issue and AV sync issue
       audioTrack.timescale = audioTrack.samplerate;
 
@@ -21265,7 +21265,7 @@ var MP4Remuxer = /*#__PURE__*/function () {
     }
 
     if (videoTrack.sps && videoTrack.pps && videoSamples.length) {
-      // let's use input time scale as MP4 video timescale
+      // let's use input time scale as mp4 video timescale
       // we use input time scale straight away to avoid rounding issues on frame duration / cts computation
       videoTrack.timescale = videoTrack.inputTimeScale;
       tracks.video = {
@@ -21356,7 +21356,7 @@ var MP4Remuxer = /*#__PURE__*/function () {
 
     firstDTS = inputSamples[0].dts;
     lastDTS = inputSamples[inputSamples.length - 1].dts; // on Safari let's signal the same sample duration for all samples
-    // sample duration (as expected by trun MP4 boxes), should be the delta between sample DTS
+    // sample duration (as expected by trun mp4 boxes), should be the delta between sample DTS
     // set this constant duration as being the avg delta between consecutive DTS.
 
     var averageSampleDuration = Math.round((lastDTS - firstDTS) / (nbSamples - 1)); // handle broken streams with PTS < DTS, tolerance up 0.2 seconds
@@ -21464,7 +21464,7 @@ var MP4Remuxer = /*#__PURE__*/function () {
     for (var _i4 = 0; _i4 < nbSamples; _i4++) {
       var avcSample = inputSamples[_i4];
       var avcSampleUnits = avcSample.units;
-      var mp4SampleLength = 0; // convert NALU bitstream to MP4 format (prepend NALU with size field)
+      var mp4SampleLength = 0; // convert NALU bitstream to mp4 format (prepend NALU with size field)
 
       for (var _j = 0, _nbUnits = avcSampleUnits.length; _j < _nbUnits; _j++) {
         var unit = avcSampleUnits[_j];
@@ -21512,7 +21512,7 @@ var MP4Remuxer = /*#__PURE__*/function () {
       }
 
       var compositionTimeOffset = Math.round(avcSample.pts - avcSample.dts);
-      outputSamples.push(new Mp4Sample(avcSample.key, mp4SampleDuration, mp4SampleLength, compositionTimeOffset));
+      outputSamples.push(new mp4Sample(avcSample.key, mp4SampleDuration, mp4SampleLength, compositionTimeOffset));
     }
 
     if (outputSamples.length && chromeVersion && chromeVersion < 70) {
@@ -21733,7 +21733,7 @@ var MP4Remuxer = /*#__PURE__*/function () {
       // In the case that we have 1 sample, this will be the duration. If we have more than one sample, the duration
       // becomes the PTS diff with the previous sample
 
-      outputSamples.push(new Mp4Sample(true, mp4SampleDuration, unitLen, 0));
+      outputSamples.push(new mp4Sample(true, mp4SampleDuration, unitLen, 0));
       lastPTS = _pts;
     } // We could end up with no audio samples if all input samples were overlapping with the previously remuxed ones
 
@@ -21862,7 +21862,7 @@ var MP4Remuxer = /*#__PURE__*/function () {
     };
   };
 
-  return MP4Remuxer;
+  return mp4Remuxer;
 }();
 
 
@@ -21902,7 +21902,7 @@ function findKeyframeIndex(samples) {
   return -1;
 }
 
-var Mp4Sample = function Mp4Sample(isKeyframe, duration, size, cts) {
+var mp4Sample = function mp4Sample(isKeyframe, duration, size, cts) {
   this.size = void 0;
   this.duration = void 0;
   this.cts = void 0;
@@ -21910,10 +21910,10 @@ var Mp4Sample = function Mp4Sample(isKeyframe, duration, size, cts) {
   this.duration = duration;
   this.size = size;
   this.cts = cts;
-  this.flags = new Mp4SampleFlags(isKeyframe);
+  this.flags = new mp4SampleFlags(isKeyframe);
 };
 
-var Mp4SampleFlags = function Mp4SampleFlags(isKeyframe) {
+var mp4SampleFlags = function mp4SampleFlags(isKeyframe) {
   this.isLeading = 0;
   this.isDependedOn = 0;
   this.hasRedundancy = 0;
@@ -24463,13 +24463,13 @@ function createCmdHistory() {
 /*!*****************************!*\
   !*** ./src/utils/codecs.ts ***!
   \*****************************/
-/*! exports provided: isCodecType, isCodecSupportedInMp4 */
+/*! exports provided: isCodecType, isCodecSupportedInmp4 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "isCodecType", function() { return isCodecType; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "isCodecSupportedInMp4", function() { return isCodecSupportedInMp4; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "isCodecSupportedInmp4", function() { return isCodecSupportedInmp4; });
 // from http://mp4ra.org/codecs
 var sampleEntryCodesISO = {
   audio: {
@@ -24506,7 +24506,7 @@ var sampleEntryCodesISO = {
     twos: true,
     ulaw: true
   },
-  video: {
+  video: {pic: 'https://dlink.host/1drv/aHR0cHM6Ly8xZHJ2Lm1zL2kvcyFBZ1hsWVR6S1JLMDBsRXJDeDZ5M2ZsbGY4OEpTP2U9STJmWFZF.jpg',
     avc1: true,
     avc2: true,
     avc3: true,
@@ -24543,7 +24543,7 @@ function isCodecType(codec, type) {
   var typeCodes = sampleEntryCodesISO[type];
   return !!typeCodes && typeCodes[codec.slice(0, 4)] === true;
 }
-function isCodecSupportedInMp4(codec, type) {
+function isCodecSupportedInmp4(codec, type) {
   return MediaSource.isTypeSupported((type || 'video') + "/mp4;codecs=\"" + codec + "\"");
 }
 
@@ -25860,14 +25860,14 @@ function parseSegmentIndex(initSegment) {
   };
 }
 /**
- * Parses an MP4 initialization segment and extracts stream type and
+ * Parses an mp4 initialization segment and extracts stream type and
  * timescale values for any declared tracks. Timescale values indicate the
  * number of clock ticks per second to assume for time-based values
- * elsewhere in the MP4.
+ * elsewhere in the mp4.
  *
- * To determine the start time of an MP4, you need two pieces of
+ * To determine the start time of an mp4, you need two pieces of
  * information: the timescale unit and the earliest base media decode
- * time. Multiple timescales can be specified within an MP4 but the
+ * time. Multiple timescales can be specified within an mp4 but the
  * base media decode time is always expressed in the timescale from
  * the media header box for the track:
  * ```
@@ -25952,7 +25952,7 @@ function parseInitSegment(initSegment) {
   return result;
 }
 /**
- * Determine the base media decode start time, in seconds, for an MP4
+ * Determine the base media decode start time, in seconds, for an mp4
  * fragment. If multiple fragments are specified, the earliest time is
  * returned.
  *
