@@ -1,0 +1,1564 @@
+
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<title>潍坊瀚声学校</title>
+<link rel="icon" href="http://wfhsgjxx.271edu.com/uploads/493/image/public/201801/20180125225142_1sg4onvao1.jpg" type="image/x-icon">
+<link rel="shortcut icon" href="http://wfhsgjxx.271edu.com/uploads/493/image/public/201801/20180125225142_1sg4onvao1.jpg" type="image/x-icon">
+<script src="http://wfhsgjxx.271edu.com/template/493/default/_files/jquery-3.5.1.js" type="text/javascript"></script>
+<script src="http://wfhsgjxx.271edu.com/template/493/default/_files/jquery.slide.js" type="text/javascript"></script>
+<script src="http://wfhsgjxx.271edu.com/template/493/default/_files/js/bay_window.js" type="text/javascript"></script>
+<script src="http://wfhsgjxx.271edu.com/template/493/default/_files/js/index_x.js" type="text/javascript"></script>
+<link href="http://wfhsgjxx.271edu.com/template/493/default/_files/css/global.css" rel="stylesheet"/>
+<link href="http://wfhsgjxx.271edu.com/template/493/default/_files/css/index.css" rel="stylesheet"/>
+<link href="http://wfhsgjxx.271edu.com/template/493/default/_files/css/css/font-awesome.css" rel="stylesheet" />
+</head>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link href="http://wfhsgjxx.271edu.com/template/493/default/_files/css/inc_header.css" rel="stylesheet" />
+<link href="http://wfhsgjxx.271edu.com/template/493/default/_files/css/css/font-awesome.css" rel="stylesheet" />
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?cedcdcf4f53c7627f4e03f80d453ff0e";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script src="http://wfhsgjxx.271edu.com/template/493/default/_files/jquery.js" type="text/javascript"></script>
+<script src="http://wfhsgjxx.271edu.com/template/493/default/_files/jquery.slide.js" type="text/javascript"></script>
+<script src="http://wfhsgjxx.271edu.com/template/493/default/_files/jcarousellite_index.js" type="text/javascript"></script>
+<script type="text/javascript"></script>
+<script type="text/javascript">
+$(function() {
+	$(".a_nodename").each(function(index){
+		var text = $(this).text();
+		var length = text.length;
+		if(length == 2) {
+			var text_new = text.substring(0,1) + '　' + text.substring(1,2);
+			$(this).text(text_new);
+		}
+	})
+})
+	$(function(){
+		if($("#body").width()==1200){
+			$(".header_body").css("width","1200px");
+			$("#header_left").css("width","24.8%");
+			$("#header_left_logo").css("width","300px");
+			$("#header_left_logo").css("height","63px");
+			$("#header_left_logo").css("margin-top","4px");
+		}
+	})
+</script>
+<script src="http://wfhsgjxx.271edu.com/template/493/default/_files/js/grayscale.js" type="text/javascript"></script>
+<script type="text/javascript">
+function IEVersion() {
+    var userAgent = navigator.userAgent; //取得浏览器的userAgent字符串  
+    var isIE = userAgent.indexOf("compatible") > -1 && userAgent.indexOf("MSIE") > -1; //判断是否IE<11浏览器  
+    var isEdge = userAgent.indexOf("Edge") > -1 && !isIE; //判断是否IE的Edge浏览器  
+    var isIE11 = userAgent.indexOf('Trident') > -1 && userAgent.indexOf("rv:11.0") > -1;
+    if(isIE) {
+        var reIE = new RegExp("MSIE (\\d+\\.\\d+);");
+        reIE.test(userAgent);
+        var fIEVersion = parseFloat(RegExp["$1"]);
+        if(fIEVersion == 7) {
+            return 7;
+        } else if(fIEVersion == 8) {
+            return 8;
+        } else if(fIEVersion == 9) {
+            return 9;
+        } else if(fIEVersion == 10) {
+            return 10;
+        } else {
+            return 6;//IE版本<=7
+        }   
+    } else if(isEdge) {
+        return 'edge';//edge
+    } else if(isIE11) {
+        return 11; //IE11  
+    }else{
+        return -1;//不是ie浏览器
+    }
+}
+$(function(){
+	var gray = "false";
+	console.log("123"+gray);
+	if(gray!=null && gray!="" && gray=="true") {
+		var head = document.head || document.getElementsByTagName('head')[0];
+		var style = document.createElement('style');
+		style.innerHTML = '*{filter:progid:DXImageTransform.Microsoft.BasicImage(grayscale=1);}html{-webkit-filter:grayscale(100%);}';
+		head.appendChild(style);
+		var version = IEVersion();
+		if(version=="edge" || version>9) {
+	 		grayscale(document.body);
+		}
+	}
+})
+	$(function(){
+		if($("#body").width()==1200){
+			$(".header_body").css("width","1200px");
+
+			$("#header_left").css("width","225px");
+
+			$("#header_left_logo").css("width","225px");
+
+			$("#header_left_logo").css("height","47px");
+
+			$("#header_left_logo").css("margin-top","11px");
+			$("#header_center").css("width","842px");
+			$(".left").css("width","85px");
+			$(".header_center_head").css("width","85px");
+			$("#header_right").css("float","right");
+			var alwidth=$(".left").length*85+85;
+			$("#lift_center").css("width",alwidth);
+		}
+
+	})
+</script>
+<style>
+.left:hover{
+	border-bottom:3px solid #104E8B;
+}
+#header_right_search{
+	border:1px solid #104E8B;
+}
+.index_banner cite span.cur{
+	background-color:#104E8B;
+}
+.xxgg_more a:hover{
+	color:#104E8B;
+}
+#morer a:hover{
+	color:#104E8B;
+}
+#searchlg{
+	color:#104E8B;
+}
+.news_tit{
+	color:#104E8B !important;
+}
+#news_pic{
+	color:#104E8B;
+}
+.index_banner cite span:hover{
+	background:#104E8B no-repeat;
+}
+</style>
+</head>
+<body>
+	<div id="header">
+	
+		<div class="header_body">
+		<div style="display: inline-block;">
+		<div id="header_left">
+			<a href="http://wfhsgjxx.271edu.com/33" >
+				<img id="header_left_logo" src="http://wfhsgjxx.271edu.com/uploads/493/image/public/201807/20180705094337_64waadpwuu.png" />
+					
+			</a>
+		</div>		<!-- end header_left -->
+		<div id="header_center">
+			<div id="lift_center">
+			<ul id="header_center_ul">
+					<li class="header_center_head">
+						<a href="http://wfhsgjxx.271edu.com/33/">首页</a>
+					</li>
+				  
+					<li class="left">
+						<a id="nodename" href="http://wfhsgjxx.271edu.com/33/gn-4798" >271教育</a>
+							<div class="left-div">
+								<ul class="left-ul">
+									 
+									<li class="left-ul-li">
+										<a class="a_nodename" href="http://wfhsgjxx.271edu.com/33/gn-4798">集团介绍</a>
+									</li>
+									
+									<li class="left-ul-li">
+										<a class="a_nodename" href="http://wfhsgjxx.271edu.com/33/gn-4801">教育哲学</a>
+									</li>
+									
+									<li class="left-ul-li">
+										<a class="a_nodename" href="http://wfhsgjxx.271edu.com/33/gn-9124">集团各中心</a>
+									</li>
+									 
+									<div style="clear:both;"></div>
+								</ul>
+							</div>
+					</li>
+				 
+					<li class="left">
+						<a id="nodename" href="http://wfhsgjxx.271edu.com/33/gn-4806" >走进学校</a>
+							<div class="left-div">
+								<ul class="left-ul">
+									 
+									<li class="left-ul-li">
+										<a class="a_nodename" href="http://wfhsgjxx.271edu.com/33/gn-4806">学校简介</a>
+									</li>
+									
+									<li class="left-ul-li">
+										<a class="a_nodename" href="http://wfhsgjxx.271edu.com/33/gn-4807">总校长</a>
+									</li>
+									
+									<li class="left-ul-li">
+										<a class="a_nodename" href="http://wfhsgjxx.271edu.com/33/gn-4813">执行校长</a>
+									</li>
+									
+									<li class="left-ul-li">
+										<a class="a_nodename" href="http://wfhsgjxx.271edu.com/33/gn-4817">学校荣誉</a>
+									</li>
+									
+									<li class="left-ul-li">
+										<a class="a_nodename" href="http://wfhsgjxx.271edu.com/33/gn-4856">菁菁校园</a>
+									</li>
+									 
+									<div style="clear:both;"></div>
+								</ul>
+							</div>
+					</li>
+				 
+					<li class="left">
+						<a id="nodename" href="http://wfhsgjxx.271edu.com/33/gn-4859" >学校新闻</a>
+							<div class="left-div">
+								<ul class="left-ul">
+									 
+									<li class="left-ul-li">
+										<a class="a_nodename" href="http://wfhsgjxx.271edu.com/33/gn-4858">公告通知</a>
+									</li>
+									
+									<li class="left-ul-li">
+										<a class="a_nodename" href="http://wfhsgjxx.271edu.com/33/gn-4859">学校动态</a>
+									</li>
+									 
+									<div style="clear:both;"></div>
+								</ul>
+							</div>
+					</li>
+				 
+					<li class="left">
+						<a id="nodename" href="http://wfhsgjxx.271edu.com/33/gn-4864" >教师发展</a>
+							<div class="left-div">
+								<ul class="left-ul">
+									 
+									<li class="left-ul-li">
+										<a class="a_nodename" href="http://wfhsgjxx.271edu.com/33/gn-4862">育人名师</a>
+									</li>
+									
+									<li class="left-ul-li">
+										<a class="a_nodename" href="http://wfhsgjxx.271edu.com/33/gn-4863">校本课程</a>
+									</li>
+									
+									<li class="left-ul-li">
+										<a class="a_nodename" href="http://wfhsgjxx.271edu.com/33/gn-4864">学科研究</a>
+									</li>
+									 
+									<div style="clear:both;"></div>
+								</ul>
+							</div>
+					</li>
+				 
+					<li class="left">
+						<a id="nodename" href="http://wfhsgjxx.271edu.com/33/gn-4872" >学生成长</a>
+							<div class="left-div">
+								<ul class="left-ul">
+									 
+									<li class="left-ul-li">
+										<a class="a_nodename" href="http://wfhsgjxx.271edu.com/33/gn-4869">学生风采</a>
+									</li>
+									
+									<li class="left-ul-li">
+										<a class="a_nodename" href="http://wfhsgjxx.271edu.com/33/gn-4870">国际交流</a>
+									</li>
+									 
+									<div style="clear:both;"></div>
+								</ul>
+							</div>
+					</li>
+				 
+					<li class="left">
+						<a id="nodename" href="http://wfhsgjxx.271edu.com/33/gn-4874" >社会服务</a>
+							<div class="left-div">
+								<ul class="left-ul">
+									 
+									<li class="left-ul-li">
+										<a class="a_nodename" href="http://wfhsgjxx.271edu.com/33/gn-4874">招生咨询</a>
+									</li>
+									
+									<li class="left-ul-li">
+										<a class="a_nodename" href="http://wfhsgjxx.271edu.com/33/gn-4875">诚招英才</a>
+									</li>
+									
+									<li class="left-ul-li">
+										<a class="a_nodename" href="http://wfhsgjxx.271edu.com/33/gn-4878">党建专题</a>
+									</li>
+									 
+									<div style="clear:both;"></div>
+								</ul>
+							</div>
+					</li>
+				  
+			</ul>
+			</div>
+			
+		</div>		<!-- end header_center -->
+		<div id="header_right">
+			<form action="/33/gs" method="get" id="header_right_search">
+				<input type="text" name="q" placeholder="" oninput="setCustomValidity('');" value="" id="search-input" onfocus="this.placeholder='' " onblur="this.placeholder=''"/>
+					<button type="submit"><i class="fa fa-search" id="searchlg" style="font-size:20px;"></i></button>
+			</form>
+		</div>	
+		</div>	<!-- end header_right -->
+	</div>		<!-- end header -->
+	
+</div>
+	    <div id="empty"></div>
+</body>
+</html>
+<body>
+	<!-- 	id="body"的div是首页内容部分最外层div -->
+	<div id="body">
+		<!-- 轮播图 -->
+		<div id="lunbo">
+			<div class="index_banner" id="banner_tabs">
+				<ul class="sp_ul">
+					 
+					<li class="imagess">
+						<img border="no" src="http://wfhsgjxx.271edu.com/uploads/493/image/public/201910/20191010083222_6nbb5p2col.jpg" />
+						<div class="img-title"></div>
+					</li> 
+					<li class="imagess">
+						<img border="no" src="http://wfhsgjxx.271edu.com/uploads/493/image/public/202310/20231009144733_2o2srjxxga.jpg" />
+						<div class="img-title"></div>
+					</li> 
+					<li class="imagess">
+						<img border="no" src="http://wfhsgjxx.271edu.com/uploads/493/image/public/202310/20231009112119_jgp2w31y6m.png" />
+						<div class="img-title"></div>
+					</li> 
+					<li class="imagess">
+						<img border="no" src="http://wfhsgjxx.271edu.com/uploads/493/image/public/201910/20191010083120_hwp7k9hto2.jpg" />
+						<div class="img-title"></div>
+					</li>  
+					<div class="clear_both"></div>
+				</ul>
+				<div id="cite_cen">
+					<div id="cite_jz">
+						<cite class="sp_cite">
+							 
+							<span id="26542"></span>
+							
+							<span id="41597"></span>
+							
+							<span id="41588"></span>
+							
+							<span id="26541"></span>
+							 
+						</cite>
+					</div>
+				</div>	
+			</div>
+			<div id="prev_lunbo"  title="上一张"></div>
+			<div id="next_lunbo"  title="下一张"></div>
+			<script type="text/javascript" src="http://wfhsgjxx.271edu.com/template/493/default/_files\js\lunbo.js"></script>
+			<!-- <div class="clear_both"></div> -->
+		</div>	
+		<!-- 中部内容区 -->
+		<div id="center_content">
+			<div id="center_content_top">
+			
+				<div id="center_content_top_left">
+				
+					<div id="center_content_top_left_top">
+						<div id="zongxiaozhang_title" class="center_content_title">
+							<span>总校长</span>
+						</div>	
+						<!-- <div id="zongxiaozhang" onClick="event.cancelBubble = true"> -->
+							<div id="jituanxuexiao_neirong">
+								<a href="http://wfhsgjxx.271edu.com/33/gn-4807" >
+									<div id="myimg">
+										<img src="http://wfhsgjxx.271edu.com/uploads/425/pre_pic/pre_pic.jpg"  alt="" id="xiaozhang"/>
+									</div>
+									<div id="myneirong">
+										<span><p><span style="font-size: 16px; font-family: 微软雅黑, &#39;Microsoft YaHei&#39;;">赵丰平</span></p></span>
+									</div>
+								</a>
+							 </div>
+						</div>
+					
+					
+					<div id="center_content_top_left_bottom">
+						<div  class="center_content_title">
+							<span>执行校长</span>
+						</div>
+							<!-- <div id="fenxiaozhang" onClick="event.cancelBubble = true"> -->
+							<div id="jituanxuexiao_neirong">
+								<a href="http://wfhsgjxx.271edu.com/33/gn-4813" >
+									<div id="myimg">
+										<img src="http://wfhsgjxx.271edu.com/uploads/493/image/public/201908/20190826213631_gwfawhk725.jpg"  alt="执行校长" id="xiaozhang" />
+									</div>	  
+									<div id="myneirong">
+										<span>李宝森</span>
+									</div>
+								</a>	
+							</div>
+							<br>
+					</div>
+					
+				</div>
+		
+				
+				
+				<!-- 右边导航部分 -->
+			<div id="center_content_top_right">
+				<!-- <div id="div-bottom" class="div-bottom"> -->
+					<div id="xiabudaohang" onClick="event.cancelBubble = true">
+						<ul id="nav-bottom">
+							<li class="current active" id="zxzx" >
+								<a href="javascript:void(0);"  ><span class="myson">今日校园</span></a>
+								<div class="daohanggang" id="zxzxids"></div>
+							</li>
+							<!-- <li class="current" id="jtxx" >
+								<a href="javascript:void(0);"><span class="myson">学校公告</span></a>
+								<div class="daohanggang" id="jtxxids"></div>
+							</li> -->
+							<li class="current" id="xbkc" >
+								<a href="javascript:void(0);" ><span class="myson">校本课程</span></a>
+								<div class="daohanggang" id="xbkcids"></div>
+							</li>
+							<li class="current" id="spzq" >
+								<a href="javascript:void(0);" ><span class="myson">视频专区</span></a>
+								<div class="daohanggang" id="spzqids"></div>
+							</li>
+							<li class="current" id="jtxx" >
+								<a href="javascript:void(0);" ><span class="myson">集团学校</span></a>
+								<div class="daohanggang" id="jtxxids"></div>
+							</li>
+							<li class="current" id="dj" >
+								<a href="javascript:void(0);" ><span class="myson">网站导航</span></a>
+								<div class="daohanggang" id="djids"></div>
+							</li>
+							
+							<!-- 
+								<a href="" target="_blank">
+							<li class="current">
+								<span class="myson">党建</span>
+							</li></a>
+							 -->
+						
+								<!-- 
+								<div id="jinrixiaoyuan_more">
+									<a href="http://wfhsgjxx.271edu.com/33/gn-4859" id="node_more_a"><span id="jinrixiaoyuan_more_span">更多>></span></a>
+								</div>
+								<div style="clear:both;" ></div>
+								 -->
+							</li>
+						</ul>
+					</div><div class="clear:both"></div>
+								<div class="xiabudaohangneirong">
+										<!-- -------今日校园-------- -->
+								<div id="zxzxid" class="neirong active" onClick="event.cancelBubble = true" 
+								style="background: url(/uploads/425/sypic/BG.png) no-repeat;background-size:100% 100%;height:100%;">
+								<div class="portlet-content">
+									<div class=" portlet-content-container">
+										<div class="portlet-body">
+											
+											<ul class="viewSeven">
+												<!-- <li id="linianjianghuali" style="width:100%;height:40px;">
+														<div id="jinrixiaoyuan_more">
+															<a href="http://wfhsgjxx.271edu.com/33/gn-4859"><span id="jinrixiaoyuan_more_span">更多>></span></a>
+														</div>
+														<div style="clear:both;" ></div>
+												</li> -->
+													
+													<div class="zhanwei" style="width:50%;height:550px;float: right;">
+												
+												<div class="zhanwei" style="height:240px;">
+													<div class="zhanwei_div" style="height:240px;position: relative;">
+							<div id="prevPhotoBtn"  title="上一张"></div>
+							<div id="nextPhotoBtn"  title="下一张"></div>
+				<div class="index_banner" id="banner_tabs1" style="width:100%;height:240px;">
+				<ul class="sp_ul_z" style="height:240px;">
+					 
+					<li class="images" style="height:240px;/* max-width:380px!important; */width:98%;min-width:330px;">
+					<a href="https://mp.weixin.qq.com/s/pLrxgN6mW77rulfR5LpaSQ" title="启程，体验一场深蓝与科技之约">
+						<img border="no" src="http://wfhsgjxx.271edu.com/uploads/493/image/public/202405/20240505140403_oohfb9cn8h.png"  style="min-width:330px;height:auto!important;width:100%;position:absolute;">
+					</a>
+					<a href="https://mp.weixin.qq.com/s/pLrxgN6mW77rulfR5LpaSQ">
+					<div class="img-title" style="position: absolute;bottom:0px;height:40px;font-size: 14px;
+						width:100%;text-align: center;background: rgba(56,56,56,0.8);line-height: 40px;
+						z-index: 999; overflow: hidden;white-space: nowrap; text-overflow:ellipsis;">
+						启程，体验一场深蓝与科技之约
+					</div>
+					</a>
+					</li> 
+					
+					<li class="images" style="height:240px;/* max-width:380px!important; */width:98%;min-width:330px;">
+					<a href="https://mp.weixin.qq.com/s/AQVj6aeqlndq9mOk0aoVoA" title="西瓜大丰收，一起来吃瓜！">
+						<img border="no" src="http://wfhsgjxx.271edu.com/uploads/493/image/public/202405/20240505140539_2vm96as4x4.jpg"  style="min-width:330px;height:auto!important;width:100%;position:absolute;">
+					</a>
+					<a href="https://mp.weixin.qq.com/s/AQVj6aeqlndq9mOk0aoVoA">
+					<div class="img-title" style="position: absolute;bottom:0px;height:40px;font-size: 14px;
+						width:100%;text-align: center;background: rgba(56,56,56,0.8);line-height: 40px;
+						z-index: 999; overflow: hidden;white-space: nowrap; text-overflow:ellipsis;">
+						西瓜大丰收，一起来吃瓜！
+					</div>
+					</a>
+					</li> 
+					
+					<li class="images" style="height:240px;/* max-width:380px!important; */width:98%;min-width:330px;">
+					<a href="https://mp.weixin.qq.com/s/pmg9EO0MBm_xHc24epTCRA" title="姊妹情深，港澳交流，共促瀚声学校发展国际化">
+						<img border="no" src="http://wfhsgjxx.271edu.com/uploads/493/image/public/202405/20240505140455_y6pk93qfbk.jpg"  style="min-width:330px;height:auto!important;width:100%;position:absolute;">
+					</a>
+					<a href="https://mp.weixin.qq.com/s/pmg9EO0MBm_xHc24epTCRA">
+					<div class="img-title" style="position: absolute;bottom:0px;height:40px;font-size: 14px;
+						width:100%;text-align: center;background: rgba(56,56,56,0.8);line-height: 40px;
+						z-index: 999; overflow: hidden;white-space: nowrap; text-overflow:ellipsis;">
+						姊妹情深，港澳交流，共促瀚声学校发展国际化
+					</div>
+					</a>
+					</li> 
+					
+					<li class="images" style="height:240px;/* max-width:380px!important; */width:98%;min-width:330px;">
+					<a href="https://mp.weixin.qq.com/s/UicYi89q-0-Qf0BNCWZMMQ" title="世界读书日 | 阅读——是这所学校的第一课程">
+						<img border="no" src="http://wfhsgjxx.271edu.com/uploads/493/image/public/202405/20240505140635_j4p109ewxl.jpg"  style="min-width:330px;height:auto!important;width:100%;position:absolute;">
+					</a>
+					<a href="https://mp.weixin.qq.com/s/UicYi89q-0-Qf0BNCWZMMQ">
+					<div class="img-title" style="position: absolute;bottom:0px;height:40px;font-size: 14px;
+						width:100%;text-align: center;background: rgba(56,56,56,0.8);line-height: 40px;
+						z-index: 999; overflow: hidden;white-space: nowrap; text-overflow:ellipsis;">
+						世界读书日 | 阅读——是这所学校的第一课程
+					</div>
+					</a>
+					</li> 
+					 
+					<div class="clear_both"></div>
+				</ul>
+				<cite class="sp_cite_1 img-title" style="top:275px;left:75%;width:73px;display:none;position: absolute;z-index: 10;">
+					 
+					<!-- <span id="42900" style="opacity:1;border-radius: 4px;margin-left:0px;max-width:372px;"></span> -->
+					<span id="42900" style="border-radius: 4px;margin-left:0px;max-width:372px;"></span>
+					
+					<!-- <span id="42902" style="opacity:1;border-radius: 4px;margin-left:0px;max-width:372px;"></span> -->
+					<span id="42902" style="border-radius: 4px;margin-left:0px;max-width:372px;"></span>
+					
+					<!-- <span id="42901" style="opacity:1;border-radius: 4px;margin-left:0px;max-width:372px;"></span> -->
+					<span id="42901" style="border-radius: 4px;margin-left:0px;max-width:372px;"></span>
+					
+					<!-- <span id="42903" style="opacity:1;border-radius: 4px;margin-left:0px;max-width:372px;"></span> -->
+					<span id="42903" style="border-radius: 4px;margin-left:0px;max-width:372px;"></span>
+					 
+				</cite>
+			</div><script type="text/javascript" src="http://wfhsgjxx.271edu.com/template/493/default/_files\js\lunbo1.js"></script>
+													</div>
+												</div>
+												<div class="lanmu2" style="width:90%;height:333px;float:left;">
+													<ul class="viewSeven">
+													<li id="xxgg_li">
+														<div class="xxgg_tit" style="height:50px;">
+															<span class="xxgg_span">
+																<i class="fa fa-book" id="news_pic" style="font-size:20px;position: relative;top:8px;"></i>
+																<span class="news_tit" style="font-size:17px;font-family: monospace;">公告通知</span>
+																<span style="font-size:12px;color:#999;font-family: -webkit-pictograph;">school&nbsp;notice</span>
+															</span>
+																
+															<span class="xxgg_more"><a class="xxgg_a" href="http://wfhsgjxx.271edu.com/33/gn-4858" >更多>>></a></span>
+														</div>
+													</li>
+													 
+													<li class="viewSevenli1">
+											        <div class="viewSevenlidiv">
+											        <a href="http://wfhsgjxx.271edu.com/33/gi-40112" id="40112">
+												    <span class="viewSevenlidiv_span" style="color:;">2024学校收费公示</span>
+												  	<span class="viewSevenlidiv_sp" style="color:;">[03-14]</span>
+													</a>
+													</div>
+													</li>
+													
+													<li class="viewSevenli1">
+											        <div class="viewSevenlidiv">
+											        <a href="http://wfhsgjxx.271edu.com/33/gi-41787" id="41787">
+												    <span class="viewSevenlidiv_span" style="color:;">潍坊瀚声学校 2024年高中招生录取实施方案</span>
+												  	<span class="viewSevenlidiv_sp" style="color:;">[11-01]</span>
+													</a>
+													</div>
+													</li>
+													
+													<li class="viewSevenli1">
+											        <div class="viewSevenlidiv">
+											        <a href="http://wfhsgjxx.271edu.com/33/gi-41472" id="41472">
+												    <span class="viewSevenlidiv_span" style="color:;">中秋、国庆节期间教师廉洁自律的特别提醒</span>
+												  	<span class="viewSevenlidiv_sp" style="color:;">[09-25]</span>
+													</a>
+													</div>
+													</li>
+													
+													<li class="viewSevenli1">
+											        <div class="viewSevenlidiv">
+											        <a href="http://wfhsgjxx.271edu.com/33/gi-41169" id="41169">
+												    <span class="viewSevenlidiv_span" style="color:;">潍坊瀚声学校2023年高中招生录取标准</span>
+												  	<span class="viewSevenlidiv_sp" style="color:;">[07-14]</span>
+													</a>
+													</div>
+													</li>
+													 
+													</ul>
+												</div>
+												</div>
+										<div class="lanmu1">
+										<li id="xxdt_li">
+														<div class="xxgg_tit" style="margin:0px;">
+														<span class="xxgg_span">
+															<i class="fa fa-newspaper-o" id="news_pic" style="font-size:20px;position: relative;top:8px;"></i>
+															<span class="news_tit" style="font-size:17px;font-family: monospace;">学校动态</span>
+															<span style="font-size:12px;color:#999;font-family: -webkit-pictograph;">school&nbsp;news</span>
+														</span>
+														<span class="xxgg_more"><a href="http://wfhsgjxx.271edu.com/33/gn-4859" >更多>>></a></span>
+														</div>
+													</li>
+											 
+											<li class="viewSevenli">
+											<div class="viewSevenlidiv">
+											<a href="https://mp.weixin.qq.com/s/pLrxgN6mW77rulfR5LpaSQ" id="42900">
+												<span class="viewSevenlidiv_span" style="color:;">启程，体验一场深蓝与科技之约</span>
+												<span class="viewSevenlidiv_sp" style="color:;">[04-30]</span>
+											</a>
+											</div>
+											</li>
+											
+											<li class="viewSevenli">
+											<div class="viewSevenlidiv">
+											<a href="https://mp.weixin.qq.com/s/AQVj6aeqlndq9mOk0aoVoA" id="42902">
+												<span class="viewSevenlidiv_span" style="color:;">西瓜大丰收，一起来吃瓜！</span>
+												<span class="viewSevenlidiv_sp" style="color:;">[04-26]</span>
+											</a>
+											</div>
+											</li>
+											
+											<li class="viewSevenli">
+											<div class="viewSevenlidiv">
+											<a href="https://mp.weixin.qq.com/s/pmg9EO0MBm_xHc24epTCRA" id="42901">
+												<span class="viewSevenlidiv_span" style="color:;">姊妹情深，港澳交流，共促瀚声学校发展国际化</span>
+												<span class="viewSevenlidiv_sp" style="color:;">[04-26]</span>
+											</a>
+											</div>
+											</li>
+											
+											<li class="viewSevenli">
+											<div class="viewSevenlidiv">
+											<a href="https://mp.weixin.qq.com/s/UicYi89q-0-Qf0BNCWZMMQ" id="42903">
+												<span class="viewSevenlidiv_span" style="color:;">世界读书日 | 阅读——是这所学校的第一课程</span>
+												<span class="viewSevenlidiv_sp" style="color:;">[04-23]</span>
+											</a>
+											</div>
+											</li>
+											
+											<li class="viewSevenli">
+											<div class="viewSevenlidiv">
+											<a href="https://mp.weixin.qq.com/s/Q1-c76QTWPIbyCI6SmIzvQ" id="42886">
+												<span class="viewSevenlidiv_span" style="color:;">瀚声有爱，春暖花开</span>
+												<span class="viewSevenlidiv_sp" style="color:;">[04-23]</span>
+											</a>
+											</div>
+											</li>
+											
+											<li class="viewSevenli">
+											<div class="viewSevenlidiv">
+											<a href="https://mp.weixin.qq.com/s/r-_MB4h04HZH_bl01UDsNQ" id="42878">
+												<span class="viewSevenlidiv_span" style="color:;">瀚声快讯 | 第八周校园见闻</span>
+												<span class="viewSevenlidiv_sp" style="color:;">[04-22]</span>
+											</a>
+											</div>
+											</li>
+											
+											<li class="viewSevenli">
+											<div class="viewSevenlidiv">
+											<a href="https://mp.weixin.qq.com/s/RePek6rjd9Sp6JoUp680bw" id="42884">
+												<span class="viewSevenlidiv_span" style="color:;">行远自迩，笃行不怠——山东二七一教育集团地理学科专家进校园活动</span>
+												<span class="viewSevenlidiv_sp" style="color:;">[04-18]</span>
+											</a>
+											</div>
+											</li>
+											
+											<li class="viewSevenli">
+											<div class="viewSevenlidiv">
+											<a href="https://mp.weixin.qq.com/s/-ZCndL3yxAaeh46uGe60MQ" id="42885">
+												<span class="viewSevenlidiv_span" style="color:;">分权赋能只为生命成长</span>
+												<span class="viewSevenlidiv_sp" style="color:;">[04-17]</span>
+											</a>
+											</div>
+											</li>
+											
+											<li class="viewSevenli">
+											<div class="viewSevenlidiv">
+											<a href="https://mp.weixin.qq.com/s/f-ReYTbyXhBSfiHe-y13hw" id="42811">
+												<span class="viewSevenlidiv_span" style="color:;">【二十四节气】清明追思　家国永念</span>
+												<span class="viewSevenlidiv_sp" style="color:;">[04-04]</span>
+											</a>
+											</div>
+											</li>
+											 
+											<div style="clear:both;"></div>
+										</div>
+											</ul>
+										</div>
+									</div>
+								</div>
+								</div>
+									<!-- -------集团学校-------- -->
+								<div id="jtxxid" class="neirong" onClick="event.cancelBubble = true" style="background: url(/uploads/425/sypic/BG.png) no-repeat;background-size:100% 98.2%;height:100%;">
+									<div id="xxzw">
+										<div class="jtlj_div">
+											<a href="http://www.271edu.com" target="_blank"  >
+												<img src="http://wfhsgjxx.271edu.com/template/493/default/_files/img/gwlg.jpg"  alt="271教育集团"/>
+											
+											<br>
+											<center><span class="jtlj_span">271教育集团</span></center> 
+											</a>
+										</div>
+									</div>
+									 
+										<div class="jituanxuexiao">
+											<a href="http://www.sdclez.cn/" target="_blank">
+												<img src="http://wfhsgjxx.271edu.com/uploads/379/image/public/201710/20171012110442_gydmiqu84x.jpg"  alt="山东省昌乐二中"/>
+											
+											<br>
+											<center><span class="jituanxuexiao_span">山东省昌乐二中</span></center> 
+											</a>
+										</div>
+									
+										<div class="jituanxuexiao">
+											<a href="http://wfsyzx.271edu.cn/" target="_blank">
+												<img src="http://wfhsgjxx.271edu.com/uploads/379/image/public/201710/20171012110415_x926ylpxxb.jpg"  alt="潍坊实验中学"/>
+											
+											<br>
+											<center><span class="jituanxuexiao_span">潍坊实验中学</span></center> 
+											</a>
+										</div>
+									
+										<div class="jituanxuexiao">
+											<a href="http://wfkwsycz.271edu.cn/" target="_blank">
+												<img src="http://wfhsgjxx.271edu.com/uploads/379/image/public/201710/20171012105325_y677l2kk5l.jpg"  alt="潍坊圣卓实验学校"/>
+											
+											<br>
+											<center><span class="jituanxuexiao_span">潍坊圣卓实验学校</span></center> 
+											</a>
+										</div>
+									
+										<div class="jituanxuexiao">
+											<a href="http://mzsy.271edu.cn/" target="_blank">
+												<img src="http://wfhsgjxx.271edu.com/uploads/379/image/public/201710/20171012105657_y8lyilfatl.png"  alt="昆明明致实验中学"/>
+											
+											<br>
+											<center><span class="jituanxuexiao_span">昆明明致实验中学</span></center> 
+											</a>
+										</div>
+									
+										<div class="jituanxuexiao">
+											<a href="http://wfxssyxx.271edu.cn/" target="_blank">
+												<img src="http://wfhsgjxx.271edu.com/uploads/379/image/public/201710/20171012105345_77kt79dej6.jpg"  alt="潍坊峡山双语学校"/>
+											
+											<br>
+											<center><span class="jituanxuexiao_span">潍坊峡山双语学校</span></center> 
+											</a>
+										</div>
+									
+										<div class="jituanxuexiao">
+											<a href="http://bzxzzx.271edu.cn/" target="_blank">
+												<img src="http://wfhsgjxx.271edu.com/uploads/379/image/public/201710/20171012105447_2pt37oqfn0.png"  alt="滨州行知中学"/>
+											
+											<br>
+											<center><span class="jituanxuexiao_span">滨州行知中学</span></center> 
+											</a>
+										</div>
+									
+										<div class="jituanxuexiao">
+											<a href="http://changleedu.271edu.cn/" target="_blank">
+												<img src="http://wfhsgjxx.271edu.com/uploads/379/image/public/201710/20171012105532_30c7imro9x.png"  alt="云南昌乐实验中学"/>
+											
+											<br>
+											<center><span class="jituanxuexiao_span">云南昌乐实验中学</span></center> 
+											</a>
+										</div>
+									
+										<div class="jituanxuexiao">
+											<a href="http://njytsy.271edu.cn/" target="_blank">
+												<img src="http://wfhsgjxx.271edu.com/uploads/379/image/public/201710/20171012105757_xcwo9vs96y.jpg"  alt="南京宇通实验学校"/>
+											
+											<br>
+											<center><span class="jituanxuexiao_span">南京宇通实验学校</span></center> 
+											</a>
+										</div>
+									
+										<div class="jituanxuexiao">
+											<a href="http://wfxssycz.271edu.cn/" target="_blank">
+												<img src="http://wfhsgjxx.271edu.com/uploads/379/image/public/201710/20171012105830_9svd0c48sa.png"  alt="峡山二七一实验初中"/>
+											
+											<br>
+											<center><span class="jituanxuexiao_span">峡山二七一实验初中</span></center> 
+											</a>
+										</div>
+									
+										<div class="jituanxuexiao">
+											<a href="http://hasdyszx.271edu.com/" target="_blank">
+												<img src="http://wfhsgjxx.271edu.com/uploads/379/image/public/201710/20171012110106_d715r0c75x.jpg"  alt="淮安市第一山中学"/>
+											
+											<br>
+											<center><span class="jituanxuexiao_span">淮安市第一山中学</span></center> 
+											</a>
+										</div>
+									
+										<div class="jituanxuexiao">
+											<a href="http://wfmjsyxx.271edu.cn/" target="_blank">
+												<img src="http://wfhsgjxx.271edu.com/uploads/379/image/public/201712/20171221100050_sd7juopndc.png"  alt="潍坊美加实验学校"/>
+											
+											<br>
+											<center><span class="jituanxuexiao_span">潍坊美加实验学校</span></center> 
+											</a>
+										</div>
+									
+										<div class="jituanxuexiao">
+											<a href="http://wfhsgjxx.271edu.com/" target="_blank">
+												<img src="http://wfhsgjxx.271edu.com/uploads/379/image/public/201710/20171012110157_ljl7jt4g0j.jpg"  alt="潍坊瀚声学校"/>
+											
+											<br>
+											<center><span class="jituanxuexiao_span">潍坊瀚声学校</span></center> 
+											</a>
+										</div>
+									
+										<div class="jituanxuexiao">
+											<a href="http://jnhdxzxx.271edu.cn/" target="_blank">
+												<img src="http://wfhsgjxx.271edu.com/uploads/379/image/public/201710/20171012110238_00o2w4sluw.png"  alt="济宁海达行知学校"/>
+											
+											<br>
+											<center><span class="jituanxuexiao_span">济宁海达行知学校</span></center> 
+											</a>
+										</div>
+									
+										<div class="jituanxuexiao">
+											<a href="http://lcnhxzxx.271edu.cn/" target="_blank">
+												<img src="http://wfhsgjxx.271edu.com/uploads/379/image/public/202101/20210121161350_nos938ihlm.png"  alt="东阿县南湖行知学校"/>
+											
+											<br>
+											<center><span class="jituanxuexiao_span">东阿县南湖行知学校</span></center> 
+											</a>
+										</div>
+									
+										<div class="jituanxuexiao">
+											<a href="http://qdclezgjzx.271edu.com" target="_blank">
+												<img src="http://wfhsgjxx.271edu.com/uploads/379/image/public/202103/20210327142314_ob9al7cry9.png"  alt="青岛昌乐二中高级中学"/>
+											
+											<br>
+											<center><span class="jituanxuexiao_span">青岛昌乐二中高级中学</span></center> 
+											</a>
+										</div>
+									 
+								</div>
+
+							
+								
+											<!-- ------校本课程------ -->
+							<div id="xbkcid" class="neirong" onClick="event.cancelBubble = true" style="background: url(/uploads/425/sypic/BG.png) no-repeat;background-size:100% 100%;height:100%;">
+								<div id="xbkc_bor" style="width: 100%;height:100%;padding-top: 18px;">
+									   <a class="title_chaolianjie" href="https://mp.weixin.qq.com/s/tg4VCp5qsYnACHOJ9EBYuw">
+									       	<div class="xbkc_list">
+												<div class="xbkc_img">
+													<img src="http://wfhsgjxx.271edu.com/uploads/493/image/public/202310/20231009090536_opjjca0mgi.jpg"/>
+												</div>
+										        <div class="xbkc_tit">舞动心弦，瀚声学子...</div>
+				     						</div>
+				 					 </a>
+									   <a class="title_chaolianjie" href="https://mp.weixin.qq.com/s/FFuYSp6aAnRmt_MYEEwumQ">
+									       	<div class="xbkc_list">
+												<div class="xbkc_img">
+													<img src="http://wfhsgjxx.271edu.com/uploads/493/image/public/202310/20231009092054_cqgth4h8q7.png"/>
+												</div>
+										        <div class="xbkc_tit">两金一铜！瀚声学子...</div>
+				     						</div>
+				 					 </a>
+									   <a class="title_chaolianjie" href="https://mp.weixin.qq.com/s/vg82cksXoBT7Ho6PekX3Jg">
+									       	<div class="xbkc_list">
+												<div class="xbkc_img">
+													<img src="http://wfhsgjxx.271edu.com/uploads/493/image/public/202310/20231009090633_b7bp3awsgo.jpg"/>
+												</div>
+										        <div class="xbkc_tit">采摘 ·售卖　乐享...</div>
+				     						</div>
+				 					 </a>
+									   <a class="title_chaolianjie" href="https://mp.weixin.qq.com/s/oi87vrMHI3Qgmnto2LsupQ">
+									       	<div class="xbkc_list">
+												<div class="xbkc_img">
+													<img src="http://wfhsgjxx.271edu.com/uploads/493/image/public/202310/20231009090721_866onlotjk.png"/>
+												</div>
+										        <div class="xbkc_tit">4+1　瀚声学子又斩...</div>
+				     						</div>
+				 					 </a>
+									   <a class="title_chaolianjie" href="https://mp.weixin.qq.com/s/XZvjidn_aaHHy1TOVdi0pw">
+									       	<div class="xbkc_list">
+												<div class="xbkc_img">
+													<img src="http://wfhsgjxx.271edu.com/uploads/493/image/public/202310/20231009090823_bhmfcagva1.jpg"/>
+												</div>
+										        <div class="xbkc_tit">聆听天籁之音——潍...</div>
+				     						</div>
+				 					 </a>
+									   <a class="title_chaolianjie" href="https://mp.weixin.qq.com/s/LgcGnlm6Ykb7jDfcY771ug">
+									       	<div class="xbkc_list">
+												<div class="xbkc_img">
+													<img src="http://wfhsgjxx.271edu.com/uploads/493/image/public/202310/20231009092203_khgk9dw2em.jpg"/>
+												</div>
+										        <div class="xbkc_tit">带你聆听音符里的诗...</div>
+				     						</div>
+				 					 </a>
+									   <a class="title_chaolianjie" href="https://mp.weixin.qq.com/s/Hxj9r150S4xs1YAKvEBY1w">
+									       	<div class="xbkc_list">
+												<div class="xbkc_img">
+													<img src="http://wfhsgjxx.271edu.com/uploads/493/image/public/202310/20231009092306_2jlvpsug17.jpg"/>
+												</div>
+										        <div class="xbkc_tit">奕淇有“画”说</div>
+				     						</div>
+				 					 </a>
+									   <a class="title_chaolianjie" href="https://mp.weixin.qq.com/s/iss-9ppTYW2kvYm56JVY3g">
+									       	<div class="xbkc_list">
+												<div class="xbkc_img">
+													<img src="http://wfhsgjxx.271edu.com/uploads/493/image/public/202310/20231009093015_qt174x4l1l.jpg"/>
+												</div>
+										        <div class="xbkc_tit">指尖流淌的艺术——...</div>
+				     						</div>
+				 					 </a>
+									   <a class="title_chaolianjie" href="https://mp.weixin.qq.com/s/4N7BE22ysrbC95dpnLZe4Q">
+									       	<div class="xbkc_list">
+												<div class="xbkc_img">
+													<img src="http://wfhsgjxx.271edu.com/uploads/493/image/public/202310/20231009160543_ouxhlpolku.jpg"/>
+												</div>
+										        <div class="xbkc_tit">“礼赞二十大　歌舞...</div>
+				     						</div>
+				 					 </a>
+									   <a class="title_chaolianjie" href="https://mp.weixin.qq.com/s/0IdxqjGsyWsCw1qGh5mbOA">
+									       	<div class="xbkc_list">
+												<div class="xbkc_img">
+													<img src="http://wfhsgjxx.271edu.com/uploads/493/image/public/202310/20231009160625_2o7d9ldfsb.jpg"/>
+												</div>
+										        <div class="xbkc_tit">又获三项省级一等奖！</div>
+				     						</div>
+				 					 </a>
+									   <a class="title_chaolianjie" href="https://mp.weixin.qq.com/s/Tug_1g1uZXSeNxmzjzLsDg">
+									       	<div class="xbkc_list">
+												<div class="xbkc_img">
+													<img src="http://wfhsgjxx.271edu.com/uploads/493/image/public/202310/20231009160804_1oyien9gba.jpg"/>
+												</div>
+										        <div class="xbkc_tit">挥彩音韵间，凤鸣瀚...</div>
+				     						</div>
+				 					 </a>
+									   <a class="title_chaolianjie" href="https://mp.weixin.qq.com/s/hGGjCOjuKQfpfc-RpBxbJg">
+									       	<div class="xbkc_list">
+												<div class="xbkc_img">
+													<img src="http://wfhsgjxx.271edu.com/uploads/493/image/public/202209/20220920144628_wf87gev4nb.jpg"/>
+												</div>
+										        <div class="xbkc_tit">无人机！点燃少年“...</div>
+				     						</div>
+				 					 </a>
+								 </div>
+							</div>
+										<!-- -------自定义导航-------- -->
+								<div id="spzqid" class="neirong" onClick="event.cancelBubble = true" style="background: url(/uploads/425/sypic/BG.png) no-repeat;background-size:100% 100%;height:100%;">
+									<div id="xbkc_bor" style="width: 100%;height:100%;padding-top: 18px;">
+									   <a class="title_chaolianjie" href="https://www.douyin.com/user/MS4wLjABAAAAN3BXOnbA1Oq7lr_MGPAwHO9pVRQDqW1OtQBf8oaF7r8" target="_blank">
+									       	<div class="xbkc_list">
+												<div class="xbkc_img">
+													<img src="http://wfhsgjxx.271edu.com/uploads/493/image/public/201905/20190508145750_44i2lgjp2n.jpg"/>
+												</div>
+										        <div class="xbkc_tit">点击查看更多视频</div>
+				     						</div>
+				 					 </a>
+									   <a class="title_chaolianjie" href="https://www.douyin.com/user/MS4wLjABAAAAN3BXOnbA1Oq7lr_MGPAwHO9pVRQDqW1OtQBf8oaF7r8?modal_id=7099734848570428706" target="_blank">
+									       	<div class="xbkc_list">
+												<div class="xbkc_img">
+													<img src="http://wfhsgjxx.271edu.com/uploads/493/image/public/202310/20231009171455_hunsr3kehq.jpg"/>
+												</div>
+										        <div class="xbkc_tit">在瀚声，快乐成长</div>
+				     						</div>
+				 					 </a>
+									   <a class="title_chaolianjie" href="https://www.douyin.com/user/MS4wLjABAAAAN3BXOnbA1Oq7lr_MGPAwHO9pVRQDqW1OtQBf8oaF7r8?modal_id=7104825774414368034" target="_blank">
+									       	<div class="xbkc_list">
+												<div class="xbkc_img">
+													<img src="http://wfhsgjxx.271edu.com/uploads/493/image/public/202310/20231009171410_t6um11k4uc.jpg"/>
+												</div>
+										        <div class="xbkc_tit">舞动青春活力</div>
+				     						</div>
+				 					 </a>
+									   <a class="title_chaolianjie" href="https://www.douyin.com/user/MS4wLjABAAAAN3BXOnbA1Oq7lr_MGPAwHO9pVRQDqW1OtQBf8oaF7r8?modal_id=7114823781264280839" target="_blank">
+									       	<div class="xbkc_list">
+												<div class="xbkc_img">
+													<img src="http://wfhsgjxx.271edu.com/uploads/493/image/public/202310/20231009171335_svhi4o9he5.jpg"/>
+												</div>
+										        <div class="xbkc_tit">瀚声冰球队</div>
+				     						</div>
+				 					 </a>
+									   <a class="title_chaolianjie" href="https://www.douyin.com/user/MS4wLjABAAAAN3BXOnbA1Oq7lr_MGPAwHO9pVRQDqW1OtQBf8oaF7r8?modal_id=7141384718095895842" target="_blank">
+									       	<div class="xbkc_list">
+												<div class="xbkc_img">
+													<img src="http://wfhsgjxx.271edu.com/uploads/493/image/public/202310/20231009171259_s0w4yk2hai.jpg"/>
+												</div>
+										        <div class="xbkc_tit">《回忆青春 感念师...</div>
+				     						</div>
+				 					 </a>
+									   <a class="title_chaolianjie" href="https://www.douyin.com/user/MS4wLjABAAAAN3BXOnbA1Oq7lr_MGPAwHO9pVRQDqW1OtQBf8oaF7r8?modal_id=7149768959825431823" target="_blank">
+									       	<div class="xbkc_list">
+												<div class="xbkc_img">
+													<img src="http://wfhsgjxx.271edu.com/uploads/493/image/public/202310/20231009171132_7t8oheg2ce.jpg"/>
+												</div>
+										        <div class="xbkc_tit">《我和我的祖国》</div>
+				     						</div>
+				 					 </a>
+									   <a class="title_chaolianjie" href="https://www.douyin.com/user/MS4wLjABAAAAN3BXOnbA1Oq7lr_MGPAwHO9pVRQDqW1OtQBf8oaF7r8?modal_id=7155081666887781672" target="_blank">
+									       	<div class="xbkc_list">
+												<div class="xbkc_img">
+													<img src="http://wfhsgjxx.271edu.com/uploads/493/image/public/202310/20231009171034_ffiisra5sq.jpg"/>
+												</div>
+										        <div class="xbkc_tit">体育美食节精彩瞬间</div>
+				     						</div>
+				 					 </a>
+									   <a class="title_chaolianjie" href="https://www.douyin.com/user/MS4wLjABAAAAN3BXOnbA1Oq7lr_MGPAwHO9pVRQDqW1OtQBf8oaF7r8?modal_id=7216157184890096957" target="_blank">
+									       	<div class="xbkc_list">
+												<div class="xbkc_img">
+													<img src="http://wfhsgjxx.271edu.com/uploads/493/image/public/202310/20231009170853_jvcaetnv79.jpg"/>
+												</div>
+										        <div class="xbkc_tit">外籍老师韦恩个人专访</div>
+				     						</div>
+				 					 </a>
+									   <a class="title_chaolianjie" href="https://www.douyin.com/user/MS4wLjABAAAAN3BXOnbA1Oq7lr_MGPAwHO9pVRQDqW1OtQBf8oaF7r8?modal_id=7237464737338936609" target="_blank">
+									       	<div class="xbkc_list">
+												<div class="xbkc_img">
+													<img src="http://wfhsgjxx.271edu.com/uploads/493/image/public/202310/20231009170740_ln057gcqn0.jpg"/>
+												</div>
+										        <div class="xbkc_tit">第六届艺术节精彩瞬间</div>
+				     						</div>
+				 					 </a>
+									   <a class="title_chaolianjie" href="https://www.douyin.com/user/MS4wLjABAAAAN3BXOnbA1Oq7lr_MGPAwHO9pVRQDqW1OtQBf8oaF7r8?modal_id=7274791087812709668" target="_blank">
+									       	<div class="xbkc_list">
+												<div class="xbkc_img">
+													<img src="http://wfhsgjxx.271edu.com/uploads/493/image/public/202310/20231009170546_pj7quhooal.jpg"/>
+												</div>
+										        <div class="xbkc_tit">舞动心弦，瀚声学子...</div>
+				     						</div>
+				 					 </a>
+									   <a class="title_chaolianjie" href="https://www.douyin.com/user/MS4wLjABAAAAN3BXOnbA1Oq7lr_MGPAwHO9pVRQDqW1OtQBf8oaF7r8?modal_id=7277356586706783542" target="_blank">
+									       	<div class="xbkc_list">
+												<div class="xbkc_img">
+													<img src="http://wfhsgjxx.271edu.com/uploads/493/image/public/202310/20231009170504_5ciu4odftb.jpg"/>
+												</div>
+										        <div class="xbkc_tit">薪火咏传瀚声梦　弦...</div>
+				     						</div>
+				 					 </a>
+									   <a class="title_chaolianjie" href="https://v.qq.com/x/page/u3026iqy9fr.html" target="_blank">
+									       	<div class="xbkc_list">
+												<div class="xbkc_img">
+													<img src="http://wfhsgjxx.271edu.com/uploads/493/image/public/201905/20190508145337_job4q0j39x.jpg"/>
+												</div>
+										        <div class="xbkc_tit">271教育集团宣传片</div>
+				     						</div>
+				 					 </a>
+								 	</div>
+								</div>
+										<!-- -------导航-------- -->
+								<div id="djid" class="neirong" onClick="event.cancelBubble = true" style="background: url(/uploads/425/sypic/BG.png) no-repeat;background-size:100% 100%;">
+								<div id="danghaojuzhong" onClick="event.cancelBubble = true" style="padding-top:10px;">
+							    <div id="daohangpic">
+							        
+							       	<div class="daohangtupian">
+										<a href="http://271oa.271edu.cn" target="_blank">
+										<img src="http://wfhsgjxx.271edu.com/uploads/493/image/public/201801/20180109183416_7rb7h0ik9t.png"  alt="271教育云"/>
+										<center><span id="daohangptname" >271教育云</span></center> </a>
+									</div>
+							     <!--  <a href="http://271oa.271edu.cn"><img src="http://wfhsgjxx.271edu.com/uploads/493/image/public/201801/20180109183416_7rb7h0ik9t.png" /></a>  -->
+							       
+							       	<div class="daohangtupian">
+										<a href="https://login.partner.microsoftonline.cn/login.srf" target="_blank">
+										<img src="http://wfhsgjxx.271edu.com/uploads/493/image/public/201801/20180109183716_91qwoc9ads.png"  alt="Office 365"/>
+										<center><span id="daohangptname" >Office 365</span></center> </a>
+									</div>
+							     <!--  <a href="https://login.partner.microsoftonline.cn/login.srf"><img src="http://wfhsgjxx.271edu.com/uploads/493/image/public/201801/20180109183716_91qwoc9ads.png" /></a>  -->
+							        
+							    
+							    </div>
+							 <div id="daohangtable_div">
+								<table class="daohangtable" >
+									 
+									    <tr>
+									     <td>
+									    <a id="daohangtable1" href="http://wfhsgjxx.271edu.com/33/gn-4798"  >271教育
+									    </a>
+									    </td>
+									     
+									    <td>
+									    <a id="daohangtable2" href="http://wfhsgjxx.271edu.com/33/gn-4798" >集团介绍
+									    </a>
+									    </td>
+									    
+									    <td>
+									    <a id="daohangtable2" href="http://wfhsgjxx.271edu.com/33/gn-4801" >教育哲学
+									    </a>
+									    </td>
+									    
+									    <td>
+									    <a id="daohangtable2" href="http://wfhsgjxx.271edu.com/33/gn-9124" >集团各中心
+									    </a>
+									    </td>
+									     
+									    </tr>
+									    
+									    <tr>
+									     <td>
+									    <a id="daohangtable1" href="http://wfhsgjxx.271edu.com/33/gn-4806"  >走进学校
+									    </a>
+									    </td>
+									     
+									    <td>
+									    <a id="daohangtable2" href="http://wfhsgjxx.271edu.com/33/gn-4806" >学校简介
+									    </a>
+									    </td>
+									    
+									    <td>
+									    <a id="daohangtable2" href="http://wfhsgjxx.271edu.com/33/gn-4807" >总校长
+									    </a>
+									    </td>
+									    
+									    <td>
+									    <a id="daohangtable2" href="http://wfhsgjxx.271edu.com/33/gn-4813" >执行校长
+									    </a>
+									    </td>
+									    
+									    <td>
+									    <a id="daohangtable2" href="http://wfhsgjxx.271edu.com/33/gn-4817" >学校荣誉
+									    </a>
+									    </td>
+									    
+									    <td>
+									    <a id="daohangtable2" href="http://wfhsgjxx.271edu.com/33/gn-4856" >菁菁校园
+									    </a>
+									    </td>
+									     
+									    </tr>
+									    
+									    <tr>
+									     <td>
+									    <a id="daohangtable1" href="http://wfhsgjxx.271edu.com/33/gn-4859"  >学校新闻
+									    </a>
+									    </td>
+									     
+									    <td>
+									    <a id="daohangtable2" href="http://wfhsgjxx.271edu.com/33/gn-4858" >公告通知
+									    </a>
+									    </td>
+									    
+									    <td>
+									    <a id="daohangtable2" href="http://wfhsgjxx.271edu.com/33/gn-4859" >学校动态
+									    </a>
+									    </td>
+									     
+									    </tr>
+									    
+									    <tr>
+									     <td>
+									    <a id="daohangtable1" href="http://wfhsgjxx.271edu.com/33/gn-4864"  >教师发展
+									    </a>
+									    </td>
+									     
+									    <td>
+									    <a id="daohangtable2" href="http://wfhsgjxx.271edu.com/33/gn-4862" >育人名师
+									    </a>
+									    </td>
+									    
+									    <td>
+									    <a id="daohangtable2" href="http://wfhsgjxx.271edu.com/33/gn-4863" >校本课程
+									    </a>
+									    </td>
+									    
+									    <td>
+									    <a id="daohangtable2" href="http://wfhsgjxx.271edu.com/33/gn-4864" >学科研究
+									    </a>
+									    </td>
+									     
+									    </tr>
+									    
+									    <tr>
+									     <td>
+									    <a id="daohangtable1" href="http://wfhsgjxx.271edu.com/33/gn-4872"  >学生成长
+									    </a>
+									    </td>
+									     
+									    <td>
+									    <a id="daohangtable2" href="http://wfhsgjxx.271edu.com/33/gn-4869" >学生风采
+									    </a>
+									    </td>
+									    
+									    <td>
+									    <a id="daohangtable2" href="http://wfhsgjxx.271edu.com/33/gn-4870" >国际交流
+									    </a>
+									    </td>
+									     
+									    </tr>
+									    
+									    <tr>
+									     <td>
+									    <a id="daohangtable1" href="http://wfhsgjxx.271edu.com/33/gn-4874"  >社会服务
+									    </a>
+									    </td>
+									     
+									    <td>
+									    <a id="daohangtable2" href="http://wfhsgjxx.271edu.com/33/gn-4874" >招生咨询
+									    </a>
+									    </td>
+									    
+									    <td>
+									    <a id="daohangtable2" href="http://wfhsgjxx.271edu.com/33/gn-4875" >诚招英才
+									    </a>
+									    </td>
+									    
+									    <td>
+									    <a id="daohangtable2" href="http://wfhsgjxx.271edu.com/33/gn-4878" >党建专题
+									    </a>
+									    </td>
+									     
+									    </tr>
+									     
+									    <tr>
+							    			<td id="jiubanrukou"><a href="http://221.1.122.85:9212/" target="_blank" ><span>旧版入口</span></a></td>
+							    		</tr>
+								</table>	
+							</div>
+						<div style="clear:both;"></div>				
+					</div>
+					</div>
+					
+					
+					
+				</div>
+			</div>
+			<!-- </div>	 -->
+		</div>
+	</div>
+		
+				
+				
+				
+		
+		
+		
+			<!-- 右边导航部分 -->
+			<div id="center_content_bottom">
+				<div id="center_content_title_v1">
+					<span id="morer">
+						   <span>学生风采</span>
+						   <a href="http://wfhsgjxx.271edu.com/33/gn-4869"  >更多>></a>
+					</span>
+				</div>
+				<div>
+					<div class="slide">
+								<div class="JQ-slide-nav">
+							 		<a class="prev" href="javascript:void(0);"></a>
+							 		<a class="next" href="javascript:void(0);"></a>
+							 	</div>
+							 	<div class="wrap">
+							 	  <div align="center">
+								 	<ul class="JQ-slide-content">
+										 
+										<li class="indexVideo" >
+											<a href="https://mp.weixin.qq.com/s/ow7dB5u1JO9aAUI_GsikbQ">
+												<img src="http://wfhsgjxx.271edu.com/uploads/493/image/public/202310/20231009090416_pq1fmy03yr.jpg">
+												<div id="syz">青春无畏，逐梦扬威——2023...</div>
+											</a>
+										</li>
+										
+										<li class="indexVideo" >
+											<a href="https://mp.weixin.qq.com/s/kOiy5YbVGaDBpIwjaND06g">
+												<img src="http://wfhsgjxx.271edu.com/uploads/493/image/public/202310/20231009090313_3wh98xfrw2.jpg">
+												<div id="syz">快来查收瀚声学子的军训花絮...</div>
+											</a>
+										</li>
+										
+										<li class="indexVideo" >
+											<a href="https://mp.weixin.qq.com/s/tg4VCp5qsYnACHOJ9EBYuw">
+												<img src="http://wfhsgjxx.271edu.com/uploads/493/image/public/202310/20231009090226_amqd054jr6.jpg">
+												<div id="syz">舞动心弦，瀚声学子绽放最美...</div>
+											</a>
+										</li>
+										
+										<li class="indexVideo" >
+											<a href="https://mp.weixin.qq.com/s/Vn6LOcjbQtTevYokZxWmNg">
+												<img src="http://wfhsgjxx.271edu.com/uploads/493/image/public/202310/20231008160425_dcxub1rp2f.jpg">
+												<div id="syz"> “满分学霸”——李路和轩</div>
+											</a>
+										</li>
+										
+										<li class="indexVideo" >
+											<a href="http://wfhsgjxx.271edu.com/33/gi-41576">
+												<img src="http://wfhsgjxx.271edu.com/uploads/493/image/public/202310/20231009090049_gpg0o6f2tf.jpg">
+												<div id="syz">来瀚声，我们一起去榨花生油！</div>
+											</a>
+										</li>
+										
+										<li class="indexVideo" >
+											<a href="https://mp.weixin.qq.com/s/sW7ofaLY_7kMwaQAbYlmfg">
+												<img src="http://wfhsgjxx.271edu.com/uploads/493/image/public/202209/20220920144756_t744sg0qi1.jpg">
+												<div id="syz">管弦乐，奏响每个孩子的精彩...</div>
+											</a>
+										</li>
+										
+										<li class="indexVideo" >
+											<a href="https://mp.weixin.qq.com/s/IwVTx7E_E3FWW4hKgMC9Cg">
+												<img src="http://wfhsgjxx.271edu.com/uploads/493/image/public/202209/20220920144721_rqvkxvsmb2.jpg">
+												<div id="syz">正手穿越、高压杀球、底线对...</div>
+											</a>
+										</li>
+										
+										<li class="indexVideo" >
+											<a href="https://mp.weixin.qq.com/s/hGGjCOjuKQfpfc-RpBxbJg">
+												<img src="http://wfhsgjxx.271edu.com/uploads/493/image/public/202209/20220920144656_nfvw1bmk8g.jpg">
+												<div id="syz">无人机！点燃少年“飞行梦”</div>
+											</a>
+										</li>
+										 
+									</ul>
+								  </div>
+								</div>
+							</div>
+				</div>
+				
+			  </div>
+			 
+		</div> 
+
+		<!-- 右侧联系浮动 -->
+		<div id="contact">
+			<div><a href="" title="在线交流" >
+			<img class="right_fixed" src="http://wfhsgjxx.271edu.com/template/493/default/_files/img/QQ (1).png">
+			</a></div>
+			<div><a href="" title="电话联系" >
+			<img class="right_fixed" src="http://wfhsgjxx.271edu.com/template/493/default/_files/img/phone.png">
+			</a></div>
+			<div><a href="" title="官方微信" >
+			<img class="right_fixed" src="http://wfhsgjxx.271edu.com/template/493/default/_files/img/wechat.png">
+			</a></div>
+			<div><a href="" title="官方微博" >
+			<img class="right_fixed" src="http://wfhsgjxx.271edu.com/template/493/default/_files/img/sina.png">
+			</a></div>
+		</div>
+		
+		<!-- 底部和联系 -->
+		
+			<div id="jianbianxian"></div>
+			<div id="body_bottom">
+				<div id="contact_bottom">
+				<div style="margin:0 auto">
+					<div class="chat" >
+						<div class="chat_a">
+						<center><a href="18866788102" target="_blank" alt="点击这里给我发消息" title="点击这里给我发消息">
+								<img src="http://wfhsgjxx.271edu.com/template/493/default/_files/img/zxlx.png" /></a></center>
+						<center>在线交流</center>
+						</div>
+						</div>
+                    
+					<div class="chat">
+					<div  class="chat_a" >
+						<center><a href="http://wfhsgjxx.271edu.com/33/gn-4888" title="0536-3316877" >
+								<img src="http://wfhsgjxx.271edu.com/template/493/default/_files/img/dhlx.png" /></a></center>
+						<center>电话交流</center>
+					</div>
+					</div>
+					<div class="chat_pic">
+					<div >
+						<center><a href="http://www.271edu.com/"  ><img id="dibu_logo" src="http://wfhsgjxx.271edu.com/template/493/default/_files/img/jtlg.png" /></a></center>
+					</div>
+					</div>
+					<div class="chat">
+					<div class="chat_a">
+						<center><a href="" ><img src="http://wfhsgjxx.271edu.com/uploads/493/image/public/201801/20180108145000_crayogt5x0.jpg" /></a></center>
+						<center>微信服务号</center>
+					</div>
+					</div>
+					<div class="chat">
+					<div  class="chat_a" >
+						<center><a href="" ><img src="http://wfhsgjxx.271edu.com/uploads/493/image/public/201801/20180108144846_nem2xs3i73.jpg" /></a></center>
+						<center>微信订阅号</center>
+					</div>
+				    </div> 
+				    </div>
+					</div>
+	
+				</div>
+			<!-- --------飘窗-------- -->	
+	
+	<div id="window_fly">
+		<a href="" target="blank" id="fly_a">
+			<img alt="" src="">
+		</a>
+		<div id="pcgb" style="display:none;"></div>
+	</div>
+<script type="text/javascript">
+	$(function(){
+$("#window_fly").hover(function(){
+			$("#pcgb").css("display","block");
+		},function(){
+			$("#pcgb").css("display","none");
+		})
+		$("#pcgb").click(function(){
+			$("#window_fly").css("display","none");
+		})
+	})
+$(function(){
+	if("true" == "false"){
+		$("#window_fly").css("display","none");
+	}else{
+		if(document.getElementById("window_fly")){ 
+			var ad1=new AdMove("window_fly"); 
+			ad1.Run();
+			}
+		} 
+})
+
+	window.onload=function(){
+			if("" != null && "" != ""){
+				$("#fly_a").attr("href","");
+			}else{
+				$("#fly_a").attr("href","javascript:void(0);");
+			}
+	}
+	
+
+</script>
+<script type="text/javascript">
+		$(function(){
+		  
+		if("false"=="true") {
+			$("#"+"40112").wrap("<em></em>");
+		}
+		if("false"=="true") {
+			$("#"+"40112").css("<strong></strong>");
+		}
+ 
+		if("false"=="true") {
+			$("#"+"41787").wrap("<em></em>");
+		}
+		if("false"=="true") {
+			$("#"+"41787").css("<strong></strong>");
+		}
+ 
+		if("false"=="true") {
+			$("#"+"41472").wrap("<em></em>");
+		}
+		if("false"=="true") {
+			$("#"+"41472").css("<strong></strong>");
+		}
+ 
+		if("false"=="true") {
+			$("#"+"41169").wrap("<em></em>");
+		}
+		if("false"=="true") {
+			$("#"+"41169").css("<strong></strong>");
+		}
+	});
+	$(function(){
+		  
+		if("false"=="true") {
+			$("#"+"42900").wrap("<em></em>");
+		}
+		if("false"=="true") {
+			$("#"+"42900").wrap("<strong></strong>");
+		}
+ 
+		if("false"=="true") {
+			$("#"+"42902").wrap("<em></em>");
+		}
+		if("false"=="true") {
+			$("#"+"42902").wrap("<strong></strong>");
+		}
+ 
+		if("false"=="true") {
+			$("#"+"42901").wrap("<em></em>");
+		}
+		if("false"=="true") {
+			$("#"+"42901").wrap("<strong></strong>");
+		}
+ 
+		if("false"=="true") {
+			$("#"+"42903").wrap("<em></em>");
+		}
+		if("false"=="true") {
+			$("#"+"42903").wrap("<strong></strong>");
+		}
+ 
+		if("false"=="true") {
+			$("#"+"42886").wrap("<em></em>");
+		}
+		if("false"=="true") {
+			$("#"+"42886").wrap("<strong></strong>");
+		}
+ 
+		if("false"=="true") {
+			$("#"+"42878").wrap("<em></em>");
+		}
+		if("false"=="true") {
+			$("#"+"42878").wrap("<strong></strong>");
+		}
+ 
+		if("false"=="true") {
+			$("#"+"42884").wrap("<em></em>");
+		}
+		if("false"=="true") {
+			$("#"+"42884").wrap("<strong></strong>");
+		}
+ 
+		if("false"=="true") {
+			$("#"+"42885").wrap("<em></em>");
+		}
+		if("false"=="true") {
+			$("#"+"42885").wrap("<strong></strong>");
+		}
+ 
+		if("false"=="true") {
+			$("#"+"42811").wrap("<em></em>");
+		}
+		if("false"=="true") {
+			$("#"+"42811").wrap("<strong></strong>");
+		}
+	});
+</script>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link href="http://wfhsgjxx.271edu.com/template/493/default/_files/css/inc_footer.css" rel="stylesheet" />
+<base id="base" href="">
+<base id="ctx" href="">
+<script type="text/javascript">
+
+// 	document.write(unescape("%3Cscript src='/visit_log%3Furl%3D")+document.location.href+unescape("%26referrer%3D")+document.referrer+unescape("' type='text/javascript'%3E%3C/script%3E"));
+	var base = document.getElementById("base").href;
+	var ctx = document.getElementById("ctx").href;
+	var url = document.location.href;
+	var referrer = document.referrer;
+	$(function(){
+		$.ajax({
+			type: "post",
+			dataType : "json",
+			data: {url:url,referrer:referrer,site:'33'},  
+			url: ctx + "/visit_log",
+			success: function(result){
+			} 
+		}); 
+	})
+</script>
+</head>
+<body>
+	<!-- <div id="bottom_logo">
+		<div id="bottom_logo_div"><img src="http://wfhsgjxx.271edu.com/template/493/default/_files/img/wf1.png" /></div>
+	</div> -->
+
+	<div id="footer">
+	<center>
+		<span id="bspan">地址:潍坊市高新区樱前街10899号&nbsp|&nbsp学校电话:0536-3316877&nbsp|&nbsp邮编:261000&nbsp|&nbsp招生电话:0536-3316788&nbsp|&nbsp观摩培训热线:0536-2990723&nbsp;|&nbsp;<a href="http://www.miitbeian.gov.cn" target="_blank" style="color:#b3aeae;font-size:12px;">备案号:鲁ICP备14033316号</a></div></span>	
+	</center>	<!-- end footer -->
+</body>
+</html>
+</body>
+</html>
